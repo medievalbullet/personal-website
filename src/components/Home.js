@@ -1,0 +1,15 @@
+import React from 'react'
+import WelcomeSection from './WelcomeSection'
+import AboutSection from './AboutSection'
+//import SkillsSection from './SkillsSection'
+//import ProjectsSection from './ProjectsSection'
+//import ContactSection from './ContactSection'
+
+export default function Home() {
+  return (
+    <div>
+          <WelcomeSection />
+          <AboutSection />
+    </div>
+  )
+}

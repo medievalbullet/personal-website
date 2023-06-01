@@ -1,0 +1,91 @@
+html {
+  * {
+    margin: 4px;
+  }
+}
+
+body {
+  background-color: #112222;
+  color: whitesmoke;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+
+.App-header {
+  background-color: inherit !important;
+  min-height: inherit  !important;
+  display: inherit  !important;
+  justify-content: inherit  !important;
+  font-size: inherit  !important;
+  color: inherit  !important;
+}
+
+.flexbox {
+    display: flex;
+}
+
+a, Link {
+  color: #44f1c2;
+  text-decoration: none;
+  &:hover {
+    color: #217961;
+  }
+}
+
+#top-navbar {
+    //margin: 1rem;
+    justify-content: space-between;
+
+    * {
+        //margin-right: 1rem;
+    }
+    *:last-child {
+        //margin-right: 0;
+    }
+}
+
+#welcome-section {
+
+  #welcome-text {
+    flex-direction: column;
+    text-align: left;
+  }
+  #welcome-image {
+    font-size: initial;
+    height: 6rem;
+    border-radius: 50%;
+  }
+}
+
+#about-section {
+
+  flex-direction: column;
+
+  .flexbox {
+    flex-direction: column
+  };
+
+  * {
+    text-align: left;
+  }
+
+  #about-title {
+    display: block;
+    text-align: center;
+  }
+  
+  .about-text {
+    margin-left: 2rem;
+  }
+}
