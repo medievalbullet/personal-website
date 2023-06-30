@@ -1,5 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from'react-router-dom'
+
+function handleSectionJump(section) {
+  setTimeout(
+    document.getElementsByClassName(section)[0].scrollIntoView({behavior: 'smooth'})
+    ,1000 )
+}
 
 export default function TopNavbar() {
   return (
@@ -7,10 +13,10 @@ export default function TopNavbar() {
         <Link to={"/"}>
           Home
         </Link>
-        <span>About</span>
+        <span onClick={() => (handleSectionJump('footer'))}>About</span>
         <span>Skills</span>
         <span>Projects</span>
-        <span>Contact</span>
+        <span id='navbar-contact'>Contact</span>
     </nav>
   )
 }

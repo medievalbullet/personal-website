@@ -1,18 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$MAIN-DARK: #17223a;
+$MAIN-LIGHT: #5b5d79;
+$ACCENT-1: #a8b545;
+$ACCENT-2: #65773d;
+$TEXT: #f7f9ee;
+$OVERLAY: #051030;
+
 html {
+  //overflow: hidden;
   * {
-    margin: 4px;
+    margin: 0px;
   }
 }
 
 body {
-  background-color: #112222;
-  color: whitesmoke;
+  background-color: $MAIN-DARK;
+  color: $TEXT;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Instrument Sans', cursive;
+  font-weight: 400;
   }
 
   
@@ -45,32 +58,85 @@ a, Link {
 
 #top-navbar {
     //margin: 1rem;
-    justify-content: space-between;
-
-    * {
-        //margin-right: 1rem;
-    }
-    *:last-child {
-        //margin-right: 0;
-    }
+    justify-content: space-around;
+    padding: 0.7rem 0;
+    font-family: 'IBM Plex Mono';
+    font-weight: 700;
 }
 
 #welcome-section {
+  height: 35rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #17223a80;
+  background: url("https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6016&q=100");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: 50%;
+  gap: 2rem;
 
   #welcome-text {
     flex-direction: column;
     text-align: left;
+    z-index: 2;
+    font-size: 1.5rem;
+    row-gap: 0.3rem;
+
+    #welcome-hello {
+      opacity: 0.7;
+      font-size: 1.2rem;
+    }
+
+    #welcome-im {
+      text-shadow: none;
+    }
+    #welcome-kirill {
+      font-weight: bold;
+      color: $ACCENT-1;
+    }
+    #welcome-reznagy {
+      font-weight: bold;
+    }
+
+    #welcome-frontend {
+      font-style: italic;
+      opacity: 0.7;
+      font-size: 1.2rem;
+    }
+
+    * {
+      gap: 0.5rem;
+    }
   }
   #welcome-image {
     font-size: initial;
     height: 6rem;
     border-radius: 50%;
+    z-index: 1;
   }
 }
 
-#about-section {
+#welcome-overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $OVERLAY;
+  opacity: 0.5;
+  object-fit: contain;
+}
 
+#about-section-container {
+
+}
+
+#about-section {
   flex-direction: column;
+  padding: 1rem;
+  max-width: 60%;
+  justify-content: end;
 
   .flexbox {
     flex-direction: column
@@ -83,9 +149,33 @@ a, Link {
   #about-title {
     display: block;
     text-align: center;
+    opacity: 0.7;
+    font-size: larger;
   }
   
-  .about-text {
-    margin-left: 2rem;
+  #about-content {
+    
+    gap: 2rem;
+
+    div {
+      gap: 0.5rem;
+    }
+
+    .about-titles-group {
+      opacity: 0.7;
+    }
+    
+    .about-text {
+      margin-left: 2rem;
+    }
   }
+
+
+}
+
+.footer {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  background-color: $MAIN-LIGHT;
+  opacity: 0.7;
 }
