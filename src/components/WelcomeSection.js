@@ -5,16 +5,25 @@ export default function WelcomeSection() {
     <section>
         <div className='flexbox' id='welcome-section'>
           <span id='welcome-overlay'></span>
-          <div className='flexbox' id='welcome-text'>
-            <span id='welcome-hello'>Hello,</span>
-            <div id='welcome-name' className='flexbox'>
-              <span id='welcome-im'>I'm,</span>
-              <span id='welcome-kirill'>Kirill</span>
-              <span id='welcome-reznagy'>Réz-Nagy</span>
+          <div className='flexbox' id='welcome-content'>
+            <div className='flexbox' id='welcome-text'>
+              <span className='slide-in-element' id='welcome-hello'>Hello,</span>
+              <div id='welcome-name' className='flexbox'>
+                <span className='slide-in-element' id='welcome-im'>I'm,</span>
+                <span className='slide-in-element' id='welcome-kirill'>Kirill</span>
+                <span className='slide-in-element' id='welcome-reznagy'>Réz-Nagy</span>
+              </div>
+              <span className='slide-in-element' id='welcome-frontend'>Frontend Developer & Web Designer</span>
             </div>
-            <span id='welcome-frontend'>Frontend Developer & Web Designer</span>
+            <img className='slide-in-element' id='welcome-image' src="https://pbs.twimg.com/profile_images/1673241368582340609/y2RiRmMj_400x400.jpg" alt='prfile picture'/>
           </div>
-          <img id='welcome-image' src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg" alt='white kitten'/>
+          <div className='flexbox' id='welcome-nav'>
+            <span id='welcome-nav-projects'>Jump to projects</span>
+            <div className='flexbox' id='welcome-nav-readmore'>
+              <span id='welcome-nav-readmore-text'>Read more</span>
+              <i className='material-icons' id='welcome-nav-readmore-arrow'>arrow_downward</i>
+            </div>
+          </div>
         </div>
     </section>
   )
