@@ -483,8 +483,25 @@ a, Link {
       grid-column-start: 1;
       grid-row-start: 1;
 
-      div:nth-child(1) {
-        display: grid;
+      &:first-child, &:last-child{
+        animation-name: sweep-up;
+        animation-duration: 300ms;
+      }
+
+      &:nth-child() {
+        animation-name: sweep-right;
+        animation-duration: 300ms;
+      }
+
+      @keyframes sweep-up {
+        0% {
+          transform: translateY(5rem);
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
       .projects-main {
@@ -499,6 +516,11 @@ a, Link {
   
         justify-content: center;
         align-items: center;
+
+        animation-name: sweep-up;
+        animation-duration: 300ms;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
   
         * {
           position: relative;
@@ -565,8 +587,11 @@ a, Link {
         border-radius: 0.5rem;
         opacity: 0.5;
         
+        transition: all 300ms ease-in-out;
+
         &:hover {
           cursor: pointer;
+          transform: scaleX(1.2);
         }
       }
 

@@ -31,6 +31,13 @@ export const ProjectsSection = () => {
       desc: 'View instruments in style',
       logo: require('../resources/logo192.png'),
       color: 'magenta'
+    },
+    {
+      id: 3,
+      title: 'Shippington',
+      desc: 'Shipping company landing page',
+      logo: require('../resources/logo192.png'),
+      color: 'orange'
     }
   ]
   
@@ -64,6 +71,17 @@ export const ProjectsSection = () => {
     useLog("currentProjectElement", "magenta", currentProjectElement)
     const currentProjectRestElement = Array.from(currentProjectRects).slice(0, currentProject - 1).concat(Array.from(currentProjectRects).slice(currentProject))
 
+    const projectMainElements = document.getElementsByClassName('projects-main')
+    
+    Array.from(projectMainElements).map((element, index) => {
+      if (index === currentProject - 1) {
+        element.style.display = "grid"
+      } else {
+        element.style.display = "none"
+      }
+    })
+    
+
     if (currentProjectElement) {
       currentProjectElement.style.backgroundColor = projects[currentProject - 1].color
       currentProjectElement.style.opacity = 1
@@ -79,6 +97,8 @@ export const ProjectsSection = () => {
     useLog("jumpToProject", "orange", index)
     setCurrentProject(index + 1)
   }
+
+  
 
   ////////////////////////////////////////// END //////////////////////////////////////////////
 
