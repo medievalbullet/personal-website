@@ -24,28 +24,32 @@ export const ProjectsSection = () => {
       title: 'Imigator',
       desc: 'An image database with tagging and search functionallity',
       logo: require('../resources/logo192.png'),
-      color: 'lightgreen'
+      color: 'lightgreen',
+      github: 'https://github.com/medievalbullet/Imigator'
     },
     {
       id: 2,
       title: 'Instuments Station',
       desc: 'View instruments in style',
       logo: require('../resources/logo192.png'),
-      color: 'magenta'
+      color: 'magenta',
+      github: null
     },
     {
       id: 3,
       title: 'Shippington',
       desc: 'Shipping company landing page',
       logo: require('../resources/logo192.png'),
-      color: 'orange'
+      color: 'orange',
+      github: null
     },
     {
       id: 4,
       title: 'Gaming Gateway',
       desc: 'Gaming forum web appp',
       logo: require('../resources/logo192.png'),
-      color: 'red'
+      color: 'red',
+      github: null
     }
   ]
   
@@ -105,6 +109,9 @@ export const ProjectsSection = () => {
       currentProjectElement.style.opacity = 1
       currentProjectElement.classList.add("projects-quicknav-rect-hover")
       currentProjectElement.classList.remove('outline-breath-class')
+      setTimeout(() => {
+        currentProjectElement.classList.remove("projects-quicknav-rect-hover")
+      }, 300)
 
       currentProjectRestElements.map((elem) => elem.style.backgroundColor = null)
       currentProjectRestElements.map((elem) => elem.style.opacity = null)
@@ -139,9 +146,10 @@ export const ProjectsSection = () => {
               <img className='projects-logo' src={project.logo} alt="project logo" />
               <h3 className='projects-title'>{project.title}</h3>
               <p className='projects-desc'>{project.desc}</p>
-              <div className='project-links'>
-                <a href="/imigator">VISIT</a>
+              <div className='projects-links'>
+                <a href={project.github} target='_blank'>[ GITHUB ]</a>
               </div>
+              <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Check it out!</a></button>
             </div>
           ))}
         </div>
