@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap");
 html {
   margin: 0;
   padding: 0;
@@ -13,29 +14,23 @@ body {
   color: #f4f5ee;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Instrument Sans', Verdana, Arial;
+  font-family: "Instrument Sans", Verdana, Arial;
   font-weight: 400;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: IBM Plex Mono, monospace;
 }
 
 .App-header {
   background-color: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#7a7a7a), color-stop(transparent), to(transparent));
-  background: linear-gradient(#7a7a7a, transparent, transparent);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #000000), to(transparent));
+  background: linear-gradient(#000000 1%, transparent);
   position: fixed;
   z-index: 2;
   width: 100vw;
-}
-
-.App-header #top-navbar {
-  font-weight: normal;
-  font-size: smaller;
 }
 
 .condensed-section {
@@ -85,6 +80,10 @@ button {
   padding: 0.5rem 1rem;
   outline: 1px solid rgba(244, 245, 238, 0.5);
   border-radius: 10rem;
+}
+
+button:hover, button:active {
+  cursor: pointer;
 }
 
 .slide-in-element {
@@ -229,8 +228,8 @@ button {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 0.7rem 0;
-  font-family: 'IBM Plex Mono', Verdana, Arial;
-  font-weight: 700;
+  font-family: "Instrument Sans", Verdana, Arial;
+  font-weight: lighter;
 }
 
 #top-navbar #top-navbar-home {
@@ -316,17 +315,22 @@ button {
   text-align: left;
   z-index: 2;
   font-size: 1.5rem;
-  row-gap: 0.3rem;
   margin: 0 1rem;
 }
 
 #welcome-section #welcome-content #welcome-text #welcome-name #welcome-name-main {
-  font-weight: bold;
-  color: #f4f5ee;
-  background: radial-gradient(#ff000080, #ff000030, transparent);
+  font-family: Rufina, sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  color: #ff0000;
 }
 
 #welcome-section #welcome-content #welcome-text #welcome-frontend {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-style: italic;
   opacity: 0.7;
   font-size: 1rem;
@@ -467,6 +471,18 @@ button {
   font-weight: bold;
   padding: 0.5rem 1.3rem;
   border-radius: 1.3rem;
+  -webkit-animation-name: outline-breath;
+          animation-name: outline-breath;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#welcome-section #welcome-nav #welcome-nav-projects:hover {
+  cursor: pointer;
 }
 
 #welcome-section #welcome-nav #welcome-nav-readmore {
@@ -559,6 +575,7 @@ button {
 }
 
 #projects-container #projects-header {
+  display: none;
   opacity: 0.4;
   -webkit-transform: scaleX(1.6);
           transform: scaleX(1.6);
@@ -636,13 +653,14 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 0.3rem;
+  gap: 0.5rem;
   width: 30%;
   height: 100%;
   justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: radial-gradient(10% #000000, #ffffff80, 70% transparent);
   -webkit-animation-name: sweep-right;
           animation-name: sweep-right;
   -webkit-animation-duration: 400ms;
@@ -772,6 +790,9 @@ button {
 }
 
 #projects-container #projects-area #projects-main-container .projects-main .projects-title {
+  font-family: Rufina, sans-serif;
+  color: #ff0000;
+  font-size: 3rem;
   -ms-grid-row: 1;
       grid-row-start: 1;
   -ms-grid-column: 2;
@@ -779,7 +800,6 @@ button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background: radial-gradient(#ff000080, #ff000030, transparent);
 }
 
 #projects-container #projects-area #projects-main-container .projects-main .projects-desc {
@@ -794,6 +814,7 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 1rem;
   gap: 0.4rem;
 }
 
@@ -813,6 +834,10 @@ button {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
           animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#projects-container #projects-area #projects-main-container .projects-main .projects-visit:hover {
+  cursor: pointer;
 }
 
 #projects-container #projects-area #projects-main-container .projects-main .projects-visit a {
@@ -1040,7 +1065,7 @@ button {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-    height: 30%;
+    width: 30rem !important;
   }
 }
 

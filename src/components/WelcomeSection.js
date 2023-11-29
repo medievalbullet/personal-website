@@ -9,7 +9,7 @@ export default function WelcomeSection() {
             <div className='flexbox' id='welcome-text'>
               <span className='slide-in-element' id='welcome-hello'></span>
               <div id='welcome-name' className='flexbox'>
-                <span className='slide-in-element' id='welcome-name'><span id='welcome-name-main'>Kirill&nbsp;&nbsp;Réz-Nagy</span></span>
+                <span className='slide-in-element' id='welcome-name'><span id='welcome-name-main'>Kirill&nbsp;Réz-Nagy</span></span>
               </div>
               <span className='slide-in-element' id='welcome-frontend'>Frontend Developer & Web Designer</span>
             </div>

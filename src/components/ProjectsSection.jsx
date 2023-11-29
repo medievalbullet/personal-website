@@ -144,12 +144,12 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div className='projects-main' key={index}>
               <img className='projects-logo' src={project.logo} alt="project logo" />
-              <h3 className='projects-title'>{project.title}</h3>
+              <h3 className='projects-title' style={{color: project.color}} >{project.title}</h3>
               <p className='projects-desc'>{project.desc}</p>
               <div className='projects-links'>
-                <a href={project.github} target='_blank'>[ GITHUB ]</a>
+                <a href={project.github} target='_blank' style={{color: project.color}}>[ GITHUB ]</a>
               </div>
-              <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Check it out!</a></button>
+              <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Take a look!</a></button>
             </div>
           ))}
         </div>
