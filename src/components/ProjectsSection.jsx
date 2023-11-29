@@ -39,6 +39,13 @@ export const ProjectsSection = () => {
       desc: 'Shipping company landing page',
       logo: require('../resources/logo192.png'),
       color: 'orange'
+    },
+    {
+      id: 4,
+      title: 'Gaming Gateway',
+      desc: 'Gaming forum web appp',
+      logo: require('../resources/logo192.png'),
+      color: 'red'
     }
   ]
   
@@ -50,51 +57,61 @@ export const ProjectsSection = () => {
     currentProjectRect = document.getElementById('projects-quicknav-rect-' + currentProject)
   }, [])
 
+
+  // NEXT ARROW
   const handleNextProject = async () => {
-  
     if (currentProject <= projects.length -1) {
       setCurrentProject(currentProject + 1)
-
-      useLog("WE GOT HERE", "lightblue", currentProject)
-
     } else {
       setCurrentProject(1)
+    }
+  }
 
-      useLog("WE GOT HERE", "red", currentProject)
+  // PREV ARROW
+  const handlePrevProject = async () => {
+    if (currentProject > 1) {
+      setCurrentProject(currentProject - 1)
+    } else {
+      setCurrentProject(projects.length)
     }
   }
 
   useEffect(() => {
     // HANDLE CURRENT PROJECT STYLES
-    currentProjectRects = document.getElementsByClassName('projects-quicknav-rect')
-
-    const currentProjectElement = currentProjectRects[currentProject - 1]
-    useLog("currentProjectElement", "magenta", currentProjectElement)
-    const currentProjectRestElement = Array.from(currentProjectRects).slice(0, currentProject - 1).concat(Array.from(currentProjectRects).slice(currentProject))
-
+    
+    /// PROJECT MAIN ///
     const projectMainElements = document.getElementsByClassName('projects-main')
     
+    // HIDE all the current PROJECT ELEMENTS, that are not the current
     Array.from(projectMainElements).map((element, index) => {
       if (index === currentProject - 1) {
-        element.style.display = "grid"
+        element.classList.remove('projects-main-hidden')
       } else {
-        element.style.display = "none"
+        // Hide other elements
+        element.classList.add('projects-main-hidden')
       }
     })
     
+    /// RECTS ///
+    currentProjectRects = document.getElementsByClassName('projects-quicknav-rect')
+
+    const currentProjectElement = currentProjectRects[currentProject - 1]
+    const currentProjectRestElements = Array.from(currentProjectRects).slice(0, currentProject - 1).concat(Array.from(currentProjectRects).slice(currentProject))
 
     if (currentProjectElement) {
+      
+      
       currentProjectElement.style.backgroundColor = projects[currentProject - 1].color
       currentProjectElement.style.opacity = 1
       currentProjectElement.classList.add("projects-quicknav-rect-hover")
       currentProjectElement.classList.remove('outline-breath-class')
 
-      useLog("currentProjectElement", "purple", currentProjectElement)
-      useLog("currentProjectRestElement", "magenta", currentProjectRestElement)
-      currentProjectRestElement.map((elem) => elem.style.backgroundColor = null)
-      currentProjectRestElement.map((elem) => elem.style.opacity = null)
-      currentProjectRestElement.map((elem) => elem.classList.remove("projects-quicknav-rect-hover"))
-      currentProjectRestElement.map((elem) => elem.classList.add('outline-breath-class'))
+      currentProjectRestElements.map((elem) => elem.style.backgroundColor = null)
+      currentProjectRestElements.map((elem) => elem.style.opacity = null)
+
+      //HOVER ANIMS AND TRANSITIONS
+      currentProjectRestElements.map((elem) => elem.classList.remove("projects-quicknav-rect-hover"))
+      currentProjectRestElements.map((elem) => elem.classList.add('outline-breath-class'))
     }
   }, [currentProject])
 
@@ -120,14 +137,18 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div className='projects-main' key={index}>
               <img className='projects-logo' src={project.logo} alt="project logo" />
-              <h4 className='projects-title'>{project.title}</h4>
+              <h3 className='projects-title'>{project.title}</h3>
               <p className='projects-desc'>{project.desc}</p>
+              <div className='project-links'>
+                <a href="/imigator">VISIT</a>
+              </div>
             </div>
           ))}
         </div>
 
 
-        <div id='projects-arrow' onClick={() => handleNextProject()}><i className='material-icons'>arrow_forward</i></div>
+        <div id='projects-next-arrow' className='projects-arrow' onClick={() => handleNextProject()}><i className='material-icons'>arrow_forward</i></div>
+        <div id='projects-prev-arrow' className='projects-arrow' onClick={() => handlePrevProject()}><i className='material-icons'>arrow_back</i></div>
 
         <div id='projects-quicknav'>
           

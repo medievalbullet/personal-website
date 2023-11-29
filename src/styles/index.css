@@ -559,8 +559,8 @@ a:hover, Link:hover {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 4rem;
-      grid-template-columns: 1fr 4rem;
+  -ms-grid-columns: 4rem 1fr 4rem;
+      grid-template-columns: 4rem 1fr 4rem;
   -ms-grid-rows: 1fr 4rem;
       grid-template-rows: 1fr 4rem;
   -webkit-box-orient: vertical;
@@ -601,23 +601,32 @@ a:hover, Link:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
   -ms-grid-row: 1;
       grid-row-start: 1;
 }
 
 #projects-container #projects-area #projects-main-container .projects-main {
-  display: none;
-  width: 100%;
-  height: 100%;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: start !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 30%;
+  height: 100%;
+  justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -746,7 +755,6 @@ a:hover, Link:hover {
       grid-row-start: 2;
   -ms-grid-column: 2;
       grid-column-start: 2;
-  left: -25%;
   width: 10rem;
 }
 
@@ -755,9 +763,6 @@ a:hover, Link:hover {
       grid-row-start: 1;
   -ms-grid-column: 2;
       grid-column-start: 2;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  left: -25%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -769,26 +774,34 @@ a:hover, Link:hover {
       grid-row-start: 3;
   -ms-grid-column: 2;
       grid-column-start: 2;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  left: -25%;
+  max-width: 20rem;
 }
 
-#projects-container #projects-area #projects-arrow {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  z-index: 1;
+#projects-container #projects-area .projects-arrow {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  z-index: 1 !important;
 }
 
-#projects-container #projects-area #projects-arrow:hover {
+#projects-container #projects-area .projects-arrow:hover {
   cursor: pointer;
+}
+
+#projects-container #projects-area #projects-next-arrow {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+}
+
+#projects-container #projects-area #projects-prev-arrow {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
 }
 
 #projects-container #projects-area #projects-quicknav {
@@ -829,6 +842,10 @@ a:hover, Link:hover {
           transform: scaleX(1.2);
   outline: 0.15rem solid #f4f5ee;
   outline-offset: 0rem;
+}
+
+.projects-main-hidden {
+  display: none !important;
 }
 
 .projects-quicknav-rect-hover {
