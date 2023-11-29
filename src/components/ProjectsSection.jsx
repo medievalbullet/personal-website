@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLog } from '../hooks/useLog'
+import { createEvent } from '@testing-library/react'
 
 export const ProjectsSection = () => {
 
@@ -85,11 +86,15 @@ export const ProjectsSection = () => {
     if (currentProjectElement) {
       currentProjectElement.style.backgroundColor = projects[currentProject - 1].color
       currentProjectElement.style.opacity = 1
+      currentProjectElement.classList.add("projects-quicknav-rect-hover")
+      currentProjectElement.classList.remove('outline-breath-class')
 
       useLog("currentProjectElement", "purple", currentProjectElement)
       useLog("currentProjectRestElement", "magenta", currentProjectRestElement)
       currentProjectRestElement.map((elem) => elem.style.backgroundColor = null)
       currentProjectRestElement.map((elem) => elem.style.opacity = null)
+      currentProjectRestElement.map((elem) => elem.classList.remove("projects-quicknav-rect-hover"))
+      currentProjectRestElement.map((elem) => elem.classList.add('outline-breath-class'))
     }
   }, [currentProject])
 

@@ -607,46 +607,6 @@ a:hover, Link:hover {
       grid-row-start: 1;
 }
 
-#projects-container #projects-area #projects-main-container:first-child, #projects-container #projects-area #projects-main-container:last-child {
-  -webkit-animation-name: sweep-up;
-          animation-name: sweep-up;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-}
-
-#projects-container #projects-area #projects-main-container:nth-child() {
-  -webkit-animation-name: sweep-right;
-          animation-name: sweep-right;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-}
-
-@-webkit-keyframes sweep-up {
-  0% {
-    -webkit-transform: translateY(5rem);
-            transform: translateY(5rem);
-    opacity: 0.2;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes sweep-up {
-  0% {
-    -webkit-transform: translateY(5rem);
-            transform: translateY(5rem);
-    opacity: 0.2;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 #projects-container #projects-area #projects-main-container .projects-main {
   display: none;
   width: 100%;
@@ -661,12 +621,120 @@ a:hover, Link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation-name: sweep-up;
-          animation-name: sweep-up;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
+  -webkit-animation-name: sweep-right;
+          animation-name: sweep-right;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
   -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
           animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#projects-container #projects-area #projects-main-container .projects-main:first-child {
+  -webkit-animation-name: sweep-down;
+          animation-name: sweep-down;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#projects-container #projects-area #projects-main-container .projects-main:last-child {
+  -webkit-animation-name: sweep-up;
+          animation-name: sweep-up;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@-webkit-keyframes sweep-up {
+  0% {
+    -webkit-transform: translateY(10rem);
+            transform: translateY(10rem);
+    opacity: 0.2;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sweep-up {
+  0% {
+    -webkit-transform: translateY(10rem);
+            transform: translateY(10rem);
+    opacity: 0.2;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sweep-down {
+  0% {
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
+    opacity: 0.2;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sweep-down {
+  0% {
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
+    opacity: 0.2;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sweep-right {
+  0% {
+    -webkit-transform: translateX(14rem);
+            transform: translateX(14rem);
+    opacity: 0.2;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sweep-right {
+  0% {
+    -webkit-transform: translateX(14rem);
+            transform: translateX(14rem);
+    opacity: 0.2;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 #projects-container #projects-area #projects-main-container .projects-main * {
@@ -749,14 +817,68 @@ a:hover, Link:hover {
   width: 4rem;
   border-radius: 0.5rem;
   opacity: 0.5;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  outline: 0.5rem solid transparent;
+  outline-offset: 0.5rem;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 
-#projects-container #projects-area #projects-quicknav .projects-quicknav-rect:hover {
+#projects-container #projects-area #projects-quicknav .projects-quicknav-rect:hover, #projects-container #projects-area #projects-quicknav .projects-quicknav-rect:active {
   cursor: pointer;
   -webkit-transform: scaleX(1.2);
           transform: scaleX(1.2);
+  outline: 0.15rem solid #f4f5ee;
+  outline-offset: 0rem;
+}
+
+.projects-quicknav-rect-hover {
+  outline: 0.15rem solid #f4f5ee !important;
+  outline-offset: 0rem !important;
+}
+
+.outline-breath-class:hover {
+  -webkit-animation-name: outline-breath;
+          animation-name: outline-breath;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes outline-breath {
+  0% {
+    outline-width: 0.5rem;
+    outline-offset: 0.5rem;
+    outline-color: transparent;
+  }
+  50% {
+    outline-width: 0.15rem;
+    outline-offset: 0;
+    outline-color: #f4f5ee;
+  }
+  100% {
+    outline-width: 0.5rem;
+    outline-offset: 0.5rem;
+    outline-color: transparent;
+  }
+}
+
+@keyframes outline-breath {
+  0% {
+    outline-width: 0.5rem;
+    outline-offset: 0.5rem;
+    outline-color: transparent;
+  }
+  50% {
+    outline-width: 0.15rem;
+    outline-offset: 0;
+    outline-color: #f4f5ee;
+  }
+  100% {
+    outline-width: 0.5rem;
+    outline-offset: 0.5rem;
+    outline-color: transparent;
+  }
 }
 
 #about-section {

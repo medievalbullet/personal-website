@@ -483,27 +483,6 @@ a, Link {
       grid-column-start: 1;
       grid-row-start: 1;
 
-      &:first-child, &:last-child{
-        animation-name: sweep-up;
-        animation-duration: 300ms;
-      }
-
-      &:nth-child() {
-        animation-name: sweep-right;
-        animation-duration: 300ms;
-      }
-
-      @keyframes sweep-up {
-        0% {
-          transform: translateY(5rem);
-          opacity: 0.2;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
       .projects-main {
         //position: absolute;
         display: none;
@@ -517,10 +496,61 @@ a, Link {
         justify-content: center;
         align-items: center;
 
-        animation-name: sweep-up;
-        animation-duration: 300ms;
-        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        $anim-base-duration: 400ms;
 
+        animation-name: sweep-right;
+        animation-duration: $anim-base-duration;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+
+        &:first-child {
+          animation-name: sweep-down;
+          animation-duration: $anim-base-duration;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &:last-child {
+          animation-name: sweep-up;
+          animation-duration: $anim-base-duration;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes sweep-up {
+          0% {
+            transform: translateY(10rem);
+            opacity: 0.2;
+            filter: blur(4px);
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes sweep-down {
+          0% {
+            transform: translateY(-10rem);
+            opacity: 0.2;
+            filter: blur(4px);
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes sweep-right {
+          0% {
+            transform: translateX(14rem);
+            opacity: 0.2;
+            filter: blur(4px);
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+  
   
         * {
           position: relative;
@@ -586,20 +616,51 @@ a, Link {
         width: 4rem;
         border-radius: 0.5rem;
         opacity: 0.5;
+        outline: 0.5rem solid transparent;
+        outline-offset: 0.5rem;
         
-        transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in;
 
-        &:hover {
+        &:hover, &:active {
           cursor: pointer;
           transform: scaleX(1.2);
+          outline: 0.15rem solid $TEXT;
+          outline-offset: 0rem;
         }
       }
-
-
     }
-
   }
+}
 
+.projects-quicknav-rect-hover {
+  outline: 0.15rem solid $TEXT !important;
+  outline-offset: 0rem !important;
+}
+
+.outline-breath-class {
+  &:hover {
+    animation-name: outline-breath;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes outline-breath {
+  0% {
+    outline-width: 0.5rem;
+    outline-offset: 0.5rem;
+    outline-color: transparent;
+  }
+  50% {
+    outline-width: 0.15rem;
+    outline-offset: 0;
+    outline-color: $TEXT;
+  }
+  100% {
+    outline-width: 0.5rem;
+    outline-offset: 0.5rem;
+    outline-color: transparent;
+  }
 }
 
 #about-section-container {
