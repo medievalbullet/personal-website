@@ -41,7 +41,7 @@ function toggleTopMenu() {
 export default function TopNavbar() {
   return (
     <>
-      <nav className="flexbox" id='top-navbar'>
+      <nav id='top-navbar'>
         <Link to={"/"} id='top-navbar-home'>
           Home
         </Link>
@@ -50,15 +50,15 @@ export default function TopNavbar() {
         <span className='link' onClick={() => (HandleSectionJump('about-section'))}>About</span>        
         <span className='link'>Contact</span>
       </nav>
-      <nav className="flexbox" id='top-navbar-small'>
-        <div className='flexbox' id='top-navbar-small-head'>
+      <nav id='top-navbar-small'>
+        <div id='top-navbar-small-head'>
           <Link to={"/"}>Home</Link>
           <i onClick={() => (toggleTopMenu())} className="material-icons" id='top-navbar-small-btn'>menu</i>
         </div>
-        <div className='flexbox' id='top-navbar-small-menu'>
+        <div id='top-navbar-small-menu'>
           <span className='link top-navbar-small-items'>Projects</span>
           <span className='link top-navbar-small-items'>Skills</span>
-          <span className='link top-navbar-small-items' onClick={() => (HandleSectionJump('about-section'), toggleTopMenu())}>About</span>
+          <span className='link top-navbar-small-items' onClick={() => (HandleSectionJump('about-main'), toggleTopMenu())}>About</span>
           <span className='link top-navbar-small-items'>Contact</span>
         </div>
       </nav>

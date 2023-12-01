@@ -132,7 +132,6 @@ export const ProjectsSection = () => {
   ////////////////////////////////////////// END //////////////////////////////////////////////
 
   return (
-   
     <section id='projects-container'>
       <h2 id='projects-header'>PROJECTS</h2>
       
