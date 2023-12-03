@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLog } from '../hooks/useLog'
 import { createEvent } from '@testing-library/react'
 
-export const ProjectsSection = () => {
+export const ProjectsMainSection = () => {
 
   /*
   useEffect(() => {
@@ -143,12 +143,11 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div className='projects-main' key={index}>
               <img className='projects-logo' src={project.logo} alt="project logo" />
-              <h3 className='projects-title' style={{color: project.color}} >{project.title}</h3>
+              <h3 className='projects-title' style={{color: project.color}}>{project.title}</h3>
               <p className='projects-desc'>{project.desc}</p>
-              <div className='projects-links'>
-                <a href={project.github} target='_blank' style={{color: project.color}}>[ GITHUB ]</a>
-              </div>
               <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Take a look!</a></button>
+              <span className='projects-readmore'>Read more below</span>
+              <i className='material-icons projects-readmore-arrow' style={{color: project.color}}>arrow_downward</i>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from'react-router-dom'
 import HandleSectionJump from '../scripts/HandleSectionJump'
+import { useJumpTo } from '../hooks/useJumpTo'
 
 function toggleTopMenu() {
   const animatedElements = document.getElementsByClassName('top-navbar-small-items')
@@ -47,7 +48,7 @@ export default function TopNavbar() {
         </Link>
         <span className='link'>Projects</span>
         <span className='link'>Skills</span>
-        <span className='link' onClick={() => (HandleSectionJump('about-section'))}>About</span>        
+        <span className='link' onClick={() => (useJumpTo('about-container'))}>About</span>        
         <span className='link'>Contact</span>
       </nav>
       <nav id='top-navbar-small'>
@@ -58,7 +59,7 @@ export default function TopNavbar() {
         <div id='top-navbar-small-menu'>
           <span className='link top-navbar-small-items'>Projects</span>
           <span className='link top-navbar-small-items'>Skills</span>
-          <span className='link top-navbar-small-items' onClick={() => (HandleSectionJump('about-main'), toggleTopMenu())}>About</span>
+          <span className='link top-navbar-small-items' onClick={() => (useJumpTo('about-container'), toggleTopMenu())}>About</span>
           <span className='link top-navbar-small-items'>Contact</span>
         </div>
       </nav>

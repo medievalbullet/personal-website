@@ -53,12 +53,6 @@ code {
   cursor: pointer;
 }
 
-.flexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 a, Link {
   color: #ff0000;
   text-decoration: none;
@@ -80,6 +74,11 @@ button {
 
 button:hover, button:active {
   cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Rufina, sans-serif;
+  font-weight: bold;
 }
 
 .slide-in-element {
@@ -286,8 +285,20 @@ button:hover, button:active {
   display: none;
 }
 
+#home-sections #projects-detail-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #home-sections section {
-  height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -302,7 +313,7 @@ button:hover, button:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  height: 100vh;
   background-color: #17223a80;
   background: url("https://images.unsplash.com/photo-1517782520350-a197eca44965?q=90&w=4015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-repeat: no-repeat;
@@ -351,14 +362,9 @@ button:hover, button:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-#welcome-section #welcome-content #welcome-text #welcome-name #welcome-name-main {
   font-family: Rufina, sans-serif;
   font-weight: 900;
   font-size: 4rem;
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
   color: #ff0000;
 }
 
@@ -385,8 +391,8 @@ button:hover, button:active {
   border-radius: 1rem;
   z-index: 1;
   margin: 0 1rem;
-  -webkit-filter: invert(0);
-          filter: invert(0);
+  -webkit-filter: invert(0) blur(3px);
+          filter: invert(0) blur(3px);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-animation-name: slow-eight;
@@ -530,13 +536,13 @@ button:hover, button:active {
 }
 
 #welcome-section #welcome-nav #welcome-nav-readmore #welcome-nav-readmore-arrow {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #ff0000;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   -webkit-animation-name: arrow-bounce;
           animation-name: arrow-bounce;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
   -webkit-animation-iteration-count: infinite;
@@ -558,31 +564,65 @@ button:hover, button:active {
 
 @-webkit-keyframes arrow-bounce {
   0% {
-    -webkit-transform: translateY(1rem);
-            transform: translateY(1rem);
-  }
-  50% {
     -webkit-transform: translateY(0rem);
             transform: translateY(0rem);
+    opacity: 0;
+  }
+  20% {
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 1;
+    -webkit-filter: blur(0);
+            filter: blur(0);
   }
   100% {
-    -webkit-transform: translateY(1rem);
-            transform: translateY(1rem);
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 0;
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
   }
 }
 
 @keyframes arrow-bounce {
   0% {
-    -webkit-transform: translateY(1rem);
-            transform: translateY(1rem);
-  }
-  50% {
     -webkit-transform: translateY(0rem);
             transform: translateY(0rem);
+    opacity: 0;
+  }
+  20% {
+    -webkit-transform: translateY(0.2rem);
+            transform: translateY(0.2rem);
+    opacity: 0;
+  }
+  70% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 1;
+    -webkit-filter: blur(0);
+            filter: blur(0);
   }
   100% {
-    -webkit-transform: translateY(1rem);
-            transform: translateY(1rem);
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+    opacity: 0;
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
   }
 }
 
@@ -595,6 +635,7 @@ button:hover, button:active {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  height: 100vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -625,13 +666,14 @@ button:hover, button:active {
           flex-direction: column;
   width: 100%;
   height: 40rem;
+  padding: 2rem 0;
 }
 
 #projects-container #projects-area #projects-bg {
   position: absolute;
   -ms-grid-column-align: start;
       justify-self: start;
-  width: 100vw;
+  width: 100%;
   height: 40rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -677,9 +719,9 @@ button:hover, button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start !important;
-      -ms-flex-align: start !important;
-          align-items: start !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -687,9 +729,7 @@ button:hover, button:active {
   width: 30%;
   height: 100%;
   justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: radial-gradient(10% #000000, #ffffff80, 70% transparent);
   -webkit-animation-name: sweep-right;
           animation-name: sweep-right;
@@ -830,6 +870,7 @@ button:hover, button:active {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  text-align: start;
 }
 
 #projects-container #projects-area #projects-main-container .projects-main .projects-desc {
@@ -837,7 +878,8 @@ button:hover, button:active {
       grid-row-start: 3;
   -ms-grid-column: 2;
       grid-column-start: 2;
-  max-width: 20rem;
+  max-width: 13rem;
+  text-align: start;
 }
 
 #projects-container #projects-area #projects-main-container .projects-main .projects-links {
@@ -874,6 +916,28 @@ button:hover, button:active {
   color: #000000;
 }
 
+#projects-container #projects-area #projects-main-container .projects-main .projects-readmore {
+  opacity: 0.6;
+  margin-top: 1.5rem;
+}
+
+#projects-container #projects-area #projects-main-container .projects-main .projects-readmore-arrow {
+  margin: 0 !important;
+  margin-top: -1rem !important;
+  opacity: 0.6;
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-top: 1rem;
+  -webkit-animation-name: arrow-bounce;
+          animation-name: arrow-bounce;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
 #projects-container #projects-area .projects-arrow {
   -ms-grid-column-align: center;
       justify-self: center;
@@ -904,7 +968,7 @@ button:hover, button:active {
 #projects-container #projects-area #projects-quicknav {
   -ms-grid-column: 1;
       grid-column-start: 1;
-  grid-column: 2 span;
+  grid-column: 3 span;
   -ms-grid-row: 2;
       grid-row-start: 2;
   z-index: 1;
@@ -995,6 +1059,130 @@ button:hover, button:active {
   }
 }
 
+#projects-detail-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 3rem 0;
+}
+
+#projects-detail-main .projects-detail-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 80%;
+  gap: 2rem;
+}
+
+#projects-detail-main .projects-detail-elements section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span:nth-child(1) {
+  background: radial-gradient(black, #ffee06) !important;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span:nth-child(2) {
+  background: radial-gradient(black, #06daff) !important;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span:nth-child(3) {
+  background: radial-gradient(black, #ea06ff) !important;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span:nth-child(4) {
+  background: radial-gradient(black, #068fff) !important;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 4rem;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 0 1rem;
+  height: 4rem;
+  background-color: #7a7a7a;
+  border-radius: 1rem;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-process {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  width: clamp(20%, 70%, 80%);
+}
+
 #about-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1002,6 +1190,10 @@ button:hover, button:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  padding-bottom: 2rem;
 }
 
 #about-main {
@@ -1019,13 +1211,6 @@ button:hover, button:active {
           flex-direction: column;
   justify-content: center;
   padding-top: 1.5rem;
-}
-
-#about-main .flexbox {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 #about-main * {
@@ -1096,6 +1281,7 @@ button:hover, button:active {
     padding: 0 1rem;
   }
   #welcome-section {
+    height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
