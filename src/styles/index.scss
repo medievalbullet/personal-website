@@ -67,14 +67,17 @@ body {
 
 .header {
   background-color: transparent;
-  background: linear-gradient($MAIN-DARK 1%, transparent);
+  background: linear-gradient($MAIN-DARK 3%, $GRADIENT-BLACK-1 12%,transparent 70%);
   position: fixed;
   z-index: 2;
   width: 100vw;
 }
 
 .link {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
 }
 
 a, Link {
@@ -225,12 +228,21 @@ h1, h2, h3, h4, h5, h6 {
 #top-navbar {
     display: flex;
     justify-content: space-around;
-    padding: 0.7rem 0;
+    padding: 1.1rem 0 2rem;
     font-family: $FONT-NORMAL;
     font-weight: lighter;
+    align-items: center;
+
+
   #top-navbar-home {
     color: $ACCENT-1;
   }
+}
+
+#top-navbar-logo {
+  width: 2rem;
+  //filter: brightness(0) saturate(100%) invert(18%) sepia(94%) saturate(4910%) hue-rotate(355deg) brightness(105%) contrast(122%);
+  fill: $ACCENT-1;
 }
 
 #top-navbar-small {
@@ -641,25 +653,35 @@ h1, h2, h3, h4, h5, h6 {
         * {
           position: relative;
         }
+        
+        .projects-header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 3rem;
+
+          .projects-logo {
+            grid-row-start: 2;
+            grid-column-start: 2;
+    
+            width: 5rem;
+          }
   
-        .projects-logo {
-          grid-row-start: 2;
-          grid-column-start: 2;
-  
-          width: 10rem;
+          .projects-title {
+            font-family: $FONT-SERIF;
+            color: $ACCENT-1;
+            font-size: 3rem;
+            
+            grid-row-start: 1;
+            grid-column-start: 2;
+    
+            width: fit-content;
+            text-align: start;
+          }
         }
 
-        .projects-title {
-          font-family: $FONT-SERIF;
-          color: $ACCENT-1;
-          font-size: 3rem;
-          
-          grid-row-start: 1;
-          grid-column-start: 2;
-  
-          width: fit-content;
-          text-align: start;
-        }
+
 
         .projects-desc {
           grid-row-start: 3;
@@ -808,34 +830,76 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     //gap: 1rem;
     max-width: 80%;
-    gap: 2rem;
+    gap: 3rem;
+    
+    .projects-detail-title {
+      display: flex;
+    }
+
+    .projects-detail-title-icon {
+      margin-right: 0.3rem;
+      color: lightgreen;
+      text-align: center;
+    }
+
+
+
+
     
     section {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
     }
+    
+    h3, h4 {
+      opacity: 0.5;
+    }
 
     .projects-detail-tools {
+      display: flex;
+      align-items: start;
 
       .projects-detail-tools-elements {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: start;
         gap: 2rem;
-        margin-top: 1rem;
-        //background: linear-gradient(4deg, $TEXT-DARK, $GRADIENT-GRAY-1, $TEXT-DARK );
+        width: 100%;
+        margin-top: 0.5rem;
+        font-size: smaller;
+        font-weight: bold;
+        flex-wrap: wrap;
 
-        span:nth-child(1) {
-          background: radial-gradient(black, #ffee06) !important;
+        // Logos for Used Tools
+        .projects-detail-tools-logo-container {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .projects-detail-tools-logo {
+            width: 1rem;
+          }
         }
-        span:nth-child(2) {
-          background: radial-gradient(black, #06daff) !important;
+
+        div:nth-child(1) {
+          span {
+            background: radial-gradient(black, #ffee06) !important;
+          }
         }
-        span:nth-child(3) {
-          background: radial-gradient(black, #ea06ff) !important;
+        div:nth-child(2) {
+          span {
+            background: radial-gradient(black, #06daff) !important;
+          }
         }
-        span:nth-child(4) {
-          background: radial-gradient(black, #068fff) !important;
+        div:nth-child(3) {
+          span {
+            background: radial-gradient(black, #ea06ff) !important;
+          }
+        }
+        div:nth-child(4) {
+          span {
+            background: radial-gradient(black, #068fff) !important;
+          }
         }
 
         span {
@@ -843,10 +907,11 @@ h1, h2, h3, h4, h5, h6 {
           justify-content: center;
           align-items: center;
 
-          min-width: 4rem;
+          min-width: 3rem;
           max-width: fit-content;
           padding: 0 1rem;
-          height: 4rem;
+          gap: 0.3rem;
+          height: 2rem;
           background-color: $ACCENT-2;
           border-radius: 1rem;
         }
@@ -854,20 +919,40 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .projects-detail-process {
-      display: flex;
 
       .projects-detail-process-main {
-        display: flex;
+        //display: flex;
         flex-direction: column;
         //justify-content: center;
-        align-items: center;
+        //align-items: center;
 
         .projects-detail-process-links {
+          font-family: $FONT-MONO;
           display: flex;
           justify-content: space-evenly;
           align-items: center;
-          margin-top: 1rem;
-          width: clamp(20%, 70%, 80%);
+          margin-top: 4rem;
+          padding: 2rem;
+          border: 1px solid lightgreen;
+
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: lightgreen;
+
+            img {
+              padding: 0.6rem;
+              width: 1rem;
+              height: 1rem;
+            }
+
+            i {
+              color: lightgreen;
+              padding: 0.2rem;
+              //width: 1rem;
+            }
+          }
         }
       }
 
@@ -909,18 +994,20 @@ h1, h2, h3, h4, h5, h6 {
   #about-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 
     div {
       gap: 0.5rem;
     }
 
     .about-titles-group {
-      opacity: 0.7;
+      opacity: 0.5;
     }
     
-    .about-text {
-      margin-left: 2rem;
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
   }
 
@@ -928,12 +1015,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
+  position: static;
+  bottom: 0;
   display: flex;
   width: 100vw;
   padding: 1rem 0;
   margin-top: 2rem;
   color: $TEXT;
-  background: linear-gradient(transparent, transparent, $ACCENT-2);
+  background: linear-gradient(transparent, $GRADIENT-COLOR-2 50%, $GRADIENT-COLOR-1, $ACCENT-1);
   opacity: 0.7;
   justify-content: center;
 }

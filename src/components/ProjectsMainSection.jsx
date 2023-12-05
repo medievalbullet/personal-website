@@ -142,8 +142,10 @@ export const ProjectsMainSection = () => {
         <div id='projects-main-container'>
           {projects.map((project, index) => (
             <div className='projects-main' key={index}>
-              <img className='projects-logo' src={project.logo} alt="project logo" />
-              <h3 className='projects-title' style={{color: project.color}}>{project.title}</h3>
+              <div className='projects-header'>
+                <img className='projects-logo' src={project.logo} alt="project logo" />
+                <h3 className='projects-title' style={{color: project.color}}>{project.title}</h3>
+              </div>
               <p className='projects-desc'>{project.desc}</p>
               <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Take a look!</a></button>
               <span className='projects-readmore'>Read more below</span>

@@ -42,16 +42,17 @@ function toggleTopMenu() {
 export default function TopNavbar() {
   return (
     <>
-      <nav id='top-navbar'>
-        <Link to={"/"} id='top-navbar-home'>
+      <nav id='top-navbar' aria-label='primary-navigation'>
+        <img className='link' id='top-navbar-logo' src={require("../resources/personal logo thick.svg")} alt="personal logo" />
+        {/* <Link to={"/"} id='top-navbar-home' onClick={useJumpTo('welcome-section')}>
           Home
-        </Link>
-        <span className='link'>Projects</span>
+        </Link> */}
+        <span className='link' style={{marginLeft: "-2rem"}}>Projects</span>
         <span className='link'>Skills</span>
         <span className='link' onClick={() => (useJumpTo('about-container'))}>About</span>        
         <span className='link'>Contact</span>
       </nav>
-      <nav id='top-navbar-small'>
+      <nav id='top-navbar-small' aria-label='primary-navigation'>
         <div id='top-navbar-small-head'>
           <Link to={"/"}>Home</Link>
           <i onClick={() => (toggleTopMenu())} className="material-icons" id='top-navbar-small-btn'>menu</i>

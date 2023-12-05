@@ -14,12 +14,12 @@ export default function Home() {
       <header className="header">
         <TopNavbar />
       </header>
-      <div id='home-sections'>
+      <main id='home-sections'>
         <WelcomeSection />
         <AboutSection />
         <ProjectsMainSection />
         <ProjectsDetailSection />
-      </div>
+      </main>
       <footer className="footer">
         <div>© {new Date().getFullYear()}, Built with React by Mastershaff, All Rights Reserved.</div>
       </footer>
