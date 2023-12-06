@@ -1299,11 +1299,20 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-#about-main #about-title {
+#about-main #about-header {
   display: block;
   text-align: center;
   opacity: 0.7;
   font-size: larger;
+  padding: 1rem 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2rem 0;
+  border: 1px solid #f4f5ee;
 }
 
 #about-main #about-content {
@@ -1321,10 +1330,6 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.5rem;
 }
 
-#about-main #about-content .about-titles-group {
-  opacity: 0.5;
-}
-
 #about-main #about-content .about-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1334,6 +1339,19 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5rem;
+}
+
+#about-main #about-content .about-section .about-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.4rem;
+  opacity: 0.7;
+  color: #ff0000;
+}
+
+#about-main #about-content .about-section .about-icon {
+  color: #ff0000;
 }
 
 .footer {

@@ -984,11 +984,17 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
   }
 
-  #about-title {
+  #about-header {
     display: block;
     text-align: center;
     opacity: 0.7;
     font-size: larger;
+    padding: 1rem 2rem;
+    align-self: center;
+    width: fit-content;
+    margin: 2rem 0;
+    border: 1px solid $MAIN-LIGHT;
+    //border-radius: 1rem;
   }
   
   #about-content {
@@ -999,15 +1005,22 @@ h1, h2, h3, h4, h5, h6 {
     div {
       gap: 0.5rem;
     }
-
-    .about-titles-group {
-      opacity: 0.5;
-    }
     
     .about-section {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+
+      .about-title {
+        display: flex;
+        gap: 0.4rem;
+        opacity: 0.7;
+        color: $ACCENT-1;
+      }
+
+      .about-icon {
+        color: $ACCENT-1;
+      }
     }
   }
 
