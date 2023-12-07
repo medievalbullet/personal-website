@@ -5,6 +5,7 @@ import TopNavbar from './TopNavbar'
 import { ProjectsMainSection } from './ProjectsMainSection.jsx'
 import { ProjectsDetailSection } from './ProjectsDetailSectionSection.jsx'
 import WelcomeSection from './WelcomeSection.jsx'
+import { Footer } from './Footer.jsx'
 //import ProjectsSection from './ProjectsSection'
 //import ContactSection from './ContactSection'
 
@@ -21,7 +22,7 @@ export default function Home() {
         <ProjectsDetailSection />
       </main>
       <footer className="footer">
-        <div>© {new Date().getFullYear()}, Built with React by Mastershaff, All Rights Reserved.</div>
+        <Footer />
       </footer>
     </div>
   )
