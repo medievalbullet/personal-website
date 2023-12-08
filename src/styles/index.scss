@@ -576,6 +576,7 @@ h1, h2, h3, h4, h5, h6 {
       background: linear-gradient($MAIN-DARK 5%, $GRADIENT-BLACK-1, $GRADIENT-BLACK-1, $MAIN-DARK 97%);
       opacity: 1;
       object-fit: contain;
+      z-index: 0;
     }
 
     

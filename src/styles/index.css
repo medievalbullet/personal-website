@@ -707,6 +707,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   -o-object-fit: contain;
      object-fit: contain;
+  z-index: 0;
 }
 
 #projects-container #projects-area #projects-main-container {

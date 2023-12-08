@@ -23,28 +23,28 @@ const ProjectsDetailSection = () => {
 
   const toolsToolList1 = [
     {
-      logo: require("../resources/vite logo.png"),
-      logoAlt: "vite logo",
       title: "Vite",
-      desc: "Initializing, Building the project"
+      desc: "Initializing, Building the project",
+      logo: require("../resources/vite logo.png"),
+      logoAlt: "vite logo"
     },
     {
-      logo: require("../resources/react logo.png"),
-      logoAlt: "react logo",
       title: "ReactJS",
-      desc: "The Framework used"
+      desc: "The Framework used",
+      logo: require("../resources/react logo.png"),
+      logoAlt: "react logo"
     },
     {
-      logo: require("../resources/sass logo.png"),
-      logoAlt: "sass logo",
       title: "Sass(SCSS)",
-      desc: "CSS Preprocessor"
+      desc: "CSS Preprocessor",
+      logo: require("../resources/sass logo.png"),
+      logoAlt: "sass logo"
     },
     {
-      logo: require("../resources/typescript logo.webp"),
-      logoAlt: "typescript logo",
       title: "Typescript",
-      desc: "Main Programming Language"
+      desc: "Main Programming Language",
+      logo: require("../resources/typescript logo.webp"),
+      logoAlt: "typescript logo"
     }
   ]
 

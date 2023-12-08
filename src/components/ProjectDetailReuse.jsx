@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLog } from '../hooks/useLog'
 
 // TODO Make tags universal and reusable!!
 
@@ -39,12 +40,13 @@ export const ProjectsDetailReuse = (props) => {
             <h3 className='projects-detail-title'><i class="material-icons sub-heading-icon projects-detail-title-icon" style={{color: props.color}}>build</i>Tools Used:</h3>
             <div className="separator-h"></div>
             <div className='projects-detail-tools-elements'>
-              {/* {props.toolsToolList.map((tool) => {
+              {props.toolsToolList.map((tool) => (
+                /* useLog("tool", "lightgreen", tool) */
                 <div className='projects-detail-tools-logo-container'>
                   <span style={{backgroundColor: props.color}}><img className='projects-detail-tools-logo' src={tool.logo} alt={tool.logoAlt} />{tool.title}</span>
                   <p>- {tool.desc}</p>
                 </div>
-              })} */}
+              ))}
             </div>
           </section>
           <section className='projects-detail-process'>
