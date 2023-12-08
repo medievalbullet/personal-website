@@ -7,7 +7,7 @@ export default function ApplyAnim(animatedElements, animationClass) {
     const animatedElementsFunc = new IntersectionObserver(elements => {
         elements.forEach(element => {
             if (element.isIntersecting) {element.target.classList.add(animationClass)}
-            else {element.target.classList.remove(animationClass)}
+            //else {element.target.classList.remove(animationClass)}
         });
     })
 

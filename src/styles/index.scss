@@ -18,7 +18,7 @@ $GRADIENT-BLACK-2: #00000030;
 
 $MAIN-DARK: #000000;
 $MAIN-LIGHT: #f4f5ee;
-$ACCENT-1: rgb(0, 255, 106);
+$ACCENT-1: #00ff6a;
 $ACCENT-2: #7a7a7a;
 $TEXT: #f4f5ee;
 $TEXT-DARK: #000000;
@@ -137,6 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Slide in animation
+
 .slide-in-element {
   visibility: hidden;
 }
@@ -157,6 +158,8 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(0%, 0%);
   }
 }
+
+
 
 .App {
   height: 100vh;
@@ -1081,6 +1084,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 1px;
   background-color: $MAIN-LIGHT;
+  opacity: 0.6;
 }
 
 .separator-v {
@@ -1088,6 +1092,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 1px;
   height: 100%;
   background-color: $MAIN-LIGHT;
+  opacity: 0.6;
 }
 
 @media (max-width: 600px) {

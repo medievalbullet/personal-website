@@ -35,7 +35,7 @@ export const ProjectsDetailSection = () => {
           </div>
         </section>
         <section className='projects-detail-process'>
-          <h3 className='sub-heading projects-detail-title'><i class="material-icons projects-detail-title-icon">account_tree</i>Proccess, Challenges</h3>
+          <h3 className='sub-heading projects-detail-title'><i class="material-icons projects-detail-title-icon">account_tree</i>Process, Challenges</h3>
           <div className="separator-h"></div>
           <p className='projects-detail-process-main'>
             When building the project I faced numerous challenges. My main goal was to focus on building a functioning CRUD app,

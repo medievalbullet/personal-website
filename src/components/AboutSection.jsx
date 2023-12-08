@@ -31,7 +31,7 @@ export default function AboutSection() {
               <p>
                 I used <strong>python</strong> as well for a while, and some basic C. 
                 I didn't create anything complicated just some basic apps like a tournament simulation game with python, 
-                where from a 16 teams, and a bracket system, each team gets randomly placed into brackets and then the winner is decided on based on the two teams score.
+                where from a 16 teams, and a bracket system, each team gets randomly placed into brackets and then the winner is decided on based on the two teams power score.
               </p>
               <p>
                 Then i got into web development just a year ago, mainly as usefull skill that would land me a job.

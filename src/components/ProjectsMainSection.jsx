@@ -134,7 +134,6 @@ export const ProjectsMainSection = () => {
   return (
     <section id='projects-container'>
       <h2 id='projects-header'>PROJECTS</h2>
-      <div className="separator-h"></div>
       <div id='projects-area'>
         <img id='projects-bg' src='https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='background image, waterfall'/>
         <div id='projects-overlay'></div>
