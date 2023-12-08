@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLog } from '../hooks/useLog'
-import { createEvent } from '@testing-library/react'
 
-export const ProjectsMainSection = () => {
+const ProjectsMainSection = () => {
 
   /*
   useEffect(() => {
@@ -170,8 +169,4 @@ export const ProjectsMainSection = () => {
   )
 }
 
-/*
-
-
-
-*/
+export default ProjectsMainSection

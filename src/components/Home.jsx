@@ -2,11 +2,10 @@ import React from 'react'
 import AboutSection from './AboutSection'
 import SkillsSection from './SkillsSection'
 import TopNavbar from './TopNavbar'
-import { ProjectsMainSection } from './ProjectsMainSection.jsx'
-import { ProjectsDetailSection } from './ProjectsDetailSectionSection.jsx'
+import ProjectsMainSection from './ProjectsMainSection'
+import ProjectsDetailSection from './ProjectsDetailSection.jsx'
 import WelcomeSection from './WelcomeSection.jsx'
 import { Footer } from './Footer.jsx'
-//import ProjectsSection from './ProjectsSection'
 //import ContactSection from './ContactSection'
 
 export default function Home() {
