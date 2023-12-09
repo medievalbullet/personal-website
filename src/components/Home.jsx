@@ -17,7 +17,6 @@ export default function Home() {
       <main id='home-sections'>
         <WelcomeSection />
         <AboutSection />
-        <ProjectsMainSection />
         <ProjectsDetailSection />
       </main>
       <footer className="footer">

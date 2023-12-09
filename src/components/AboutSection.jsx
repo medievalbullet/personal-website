@@ -18,7 +18,7 @@ export default function AboutSection() {
           <h2 className='slide-in-element' id='about-header'>ABOUT ME</h2>
           <div id='about-content'>
             <section className='about-section'>
-              <h3 className='about-title slide-in-element' id='about-journey'><i class="material-icons about-icon">fork_right</i>My Journey</h3>
+              <h3 className='about-title slide-in-element' id='about-journey'><i className="material-icons about-icon">fork_right</i>My Journey</h3>
               <div className="separator-h"></div>
               <p className='about-text slide-in-element' id='about-journey-text'>
                 My coding journey originally started with game development, specifically the Godot game engine, and it's own programming language GDScript.
@@ -40,9 +40,9 @@ export default function AboutSection() {
               <p></p>
             </section>
             <section className='about-section'>
-              <h3 className='about-title slide-in-element' id='about-journey-title'><i class="material-icons about-icon">sports_esports</i>Hobbies & Interests</h3>
+              <h3 className='about-title slide-in-element' id='about-journey-title'><i className="material-icons about-icon">sports_esports</i>Hobbies & Interests</h3>
               <div className="separator-h"></div>
-              <p className='about-text slide-in-element' id='about-journey-text'>
+              <span className='about-text slide-in-element' id='about-journey-text'>
                 I like:
                 <ul>
                   <li>Listening to music</li>
@@ -50,11 +50,7 @@ export default function AboutSection() {
                   <li>Playing games</li>
                   <li></li>
                 </ul>
-                
-                
-                
-
-              </p>
+              </span>
             </section>
           </div>
         </div>

@@ -1,56 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useLog } from '../hooks/useLog'
 
-const ProjectsMainSection = () => {
-
-  /*
-  useEffect(() => {
-    const bg = document.getElementById("projects-bg")
-    if (bg) {
-      document.getElementById("projects-overlay").style.height = bg.offsetHeight
-    }
-  }, [])
-  */
+export const ProjectsMainSection = (props) => {
 
   ////////////////////////////////////////// SCRIPT ///////////////////////////////////////////
   
   // VARIABLES
   const [currentProject, setCurrentProject] = useState(1)
-
-  const projects = [
-    {
-      id: 1,
-      title: 'Imigator',
-      desc: 'An image database with tagging and search functionallity',
-      logo: require('../resources/logo192.png'),
-      color: 'lightgreen',
-      github: 'https://github.com/medievalbullet/Imigator'
-    },
-    {
-      id: 2,
-      title: 'Instuments Station',
-      desc: 'View instruments in style',
-      logo: require('../resources/logo192.png'),
-      color: 'magenta',
-      github: null
-    },
-    {
-      id: 3,
-      title: 'Shippington',
-      desc: 'Shipping company landing page',
-      logo: require('../resources/logo192.png'),
-      color: 'orange',
-      github: null
-    },
-    {
-      id: 4,
-      title: 'Gaming Gateway',
-      desc: 'Gaming forum web appp',
-      logo: require('../resources/logo192.png'),
-      color: 'red',
-      github: null
-    }
-  ]
   
   let currentProjectRect
   let currentProjectRects
@@ -63,7 +19,7 @@ const ProjectsMainSection = () => {
 
   // NEXT ARROW
   const handleNextProject = async () => {
-    if (currentProject <= projects.length -1) {
+    if (currentProject <= props.projects.length -1) {
       setCurrentProject(currentProject + 1)
     } else {
       setCurrentProject(1)
@@ -75,7 +31,7 @@ const ProjectsMainSection = () => {
     if (currentProject > 1) {
       setCurrentProject(currentProject - 1)
     } else {
-      setCurrentProject(projects.length)
+      setCurrentProject(props.projects.length)
     }
   }
 
@@ -104,7 +60,7 @@ const ProjectsMainSection = () => {
     if (currentProjectElement) {
       
       
-      currentProjectElement.style.backgroundColor = projects[currentProject - 1].color
+      currentProjectElement.style.backgroundColor = props.projects[currentProject - 1].color
       currentProjectElement.style.opacity = 1
       currentProjectElement.classList.add("projects-quicknav-rect-hover")
       currentProjectElement.classList.remove('outline-breath-class')
@@ -130,6 +86,14 @@ const ProjectsMainSection = () => {
 
   ////////////////////////////////////////// END //////////////////////////////////////////////
 
+  /* 
+  WE HAVE:
+
+  props.project.
+  
+  */
+
+
   return (
     <section id='projects-container'>
       <h2 id='projects-header'>PROJECTS</h2>
@@ -138,13 +102,13 @@ const ProjectsMainSection = () => {
         <div id='projects-overlay'></div>
 
         <div id='projects-main-container'>
-          {projects.map((project, index) => (
+          {props.projects.map((project, index) => (
             <div className='projects-main' key={index}>
               <div className='projects-header'>
                 <img className='projects-logo' src={project.logo} alt="project logo" />
                 <h3 className='projects-title' style={{color: project.color}}>{project.title}</h3>
               </div>
-              <p className='projects-desc'>{project.desc}</p>
+              <p className='projects-desc'>{project.descShort}</p>
               <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Take a look!</a></button>
               <span className='projects-readmore'>Read more below</span>
               <i className='material-icons projects-readmore-arrow' style={{color: project.color}}>arrow_downward</i>
@@ -158,7 +122,7 @@ const ProjectsMainSection = () => {
 
         <div id='projects-quicknav'>
           
-          {projects.map((project, index) => (
+          {props.projects.map((project, index) => (
             <span id={'projects-quicknav-rect-' + (index + 1)} className='projects-quicknav-rect' key={index} onClick={() => jumpToProject(index)}></span>
           ))}
         </div>
