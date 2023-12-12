@@ -14,7 +14,7 @@ export const ProjectsDetailReuse = (props) => {
     return (
       <>
         {/* Detail Section */}
-        <section id='projects-detail-main'>
+        <section className='projects-detail-main' id={props.id}>
           <div className='projects-detail-elements'>
             <section>
               <h3 className='projects-detail-title'><i className="material-icons projects-detail-title-icon" style={{color: props.projects.color}}>description</i>Description, Features</h3>
@@ -27,7 +27,6 @@ export const ProjectsDetailReuse = (props) => {
               <h3 className='projects-detail-title'><i className="material-icons sub-heading-icon projects-detail-title-icon" style={{color: props.projects.color}}>build</i>Tools Used:</h3>
               <div className="separator-h"></div>
               <div className='projects-detail-tools-elements'>
-                {useLog("toolsList", "lightblue", props.projects.toolsList)}
                 {props.projects.toolsList.map((tool, index) => (
                   <div className='projects-detail-tools-logo-container' key={index}>
                     <span style={{backgroundColor: props.projects.color}}><img className='projects-detail-tools-logo' src={tool.logo} alt={tool.logoAlt} />{tool.title}</span>

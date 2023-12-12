@@ -1089,7 +1089,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#projects-detail-main {
+.projects-detail-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1110,7 +1110,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 3rem 0;
 }
 
-#projects-detail-main .projects-detail-elements {
+.projects-detail-main .projects-detail-elements {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1122,19 +1122,19 @@ h1, h2, h3, h4, h5, h6 {
   gap: 4rem;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-title {
+.projects-detail-main .projects-detail-elements .projects-detail-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-title-icon {
+.projects-detail-main .projects-detail-elements .projects-detail-title-icon {
   margin-right: 0.3rem;
   color: lightgreen;
   text-align: center;
 }
 
-#projects-detail-main .projects-detail-elements section {
+.projects-detail-main .projects-detail-elements section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1145,11 +1145,11 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.5rem;
 }
 
-#projects-detail-main .projects-detail-elements h3, #projects-detail-main .projects-detail-elements h4 {
+.projects-detail-main .projects-detail-elements h3, .projects-detail-main .projects-detail-elements h4 {
   opacity: 0.5;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools {
+.projects-detail-main .projects-detail-elements .projects-detail-tools {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1158,7 +1158,7 @@ h1, h2, h3, h4, h5, h6 {
           align-items: start;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1174,7 +1174,7 @@ h1, h2, h3, h4, h5, h6 {
       flex-wrap: wrap;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements .projects-detail-tools-logo-container {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements .projects-detail-tools-logo-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1184,27 +1184,27 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements .projects-detail-tools-logo-container .projects-detail-tools-logo {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements .projects-detail-tools-logo-container .projects-detail-tools-logo {
   width: 1rem;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(1) span {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(1) span {
   background: radial-gradient(black, #ffee06) !important;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(2) span {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(2) span {
   background: radial-gradient(black, #06daff) !important;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(3) span {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(3) span {
   background: radial-gradient(black, #ea06ff) !important;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(4) span {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(4) span {
   background: radial-gradient(black, #068fff) !important;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span {
+.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1225,14 +1225,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 1rem;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main {
+.projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links {
+.projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links {
   font-family: IBM Plex Mono, monospace;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1248,7 +1248,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid lightgreen;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a {
+.projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1261,13 +1261,13 @@ h1, h2, h3, h4, h5, h6 {
   color: lightgreen;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a img {
+.projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a img {
   padding: 0.6rem;
   width: 1rem;
   height: 1rem;
 }
 
-#projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a i {
+.projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a i {
   color: lightgreen;
   padding: 0.2rem;
 }

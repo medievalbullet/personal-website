@@ -78,7 +78,7 @@ export const ProjectsMainSection = (props) => {
   }, [currentProject])
 
   const jumpToProject = (index) => {
-    useLog("jumpToProject", "orange", index)
+    //useLog("jumpToProject", "orange", index)
     setCurrentProject(index + 1)
   }
 
