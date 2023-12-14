@@ -82,16 +82,66 @@ export const ProjectsMainSection = (props) => {
     setCurrentProject(index + 1)
   }
 
-  
+
+  // Arrows Follow mouse
+  const arrowNext = document.getElementById("projects-next-arrow")
+  const arrowPrev = document.getElementById("projects-prev-arrow")
+
+  const arrowNextIcon = document.getElementById("projects-next-arrow-icon")
+  const arrowPrevIcon = document.getElementById("projects-prev-arrow-icon")
+
+  let arrowNextFollow = false
+
+  // NOTE: This doesn't work as intended, position fixed, made it work, but it doesnt reset back to position relative, and the while loop doesnt work.
+
+  if (arrowNext) {
+    arrowNext.addEventListener("mouseenter", () => {
+      arrowNextFollow = true
+      arrowNextIcon.style.position = "fixed"
+      //useLog("Mouse entered!", "aquamarine", [arrowNextIcon, arrowNextFollow])
+      
+      if (arrowNextFollow === true) {
+        document.addEventListener("mousemove", (e) => {
+          const my = e.clientY
+          useLog("my", "green", my)
+          
+          // Positioning
+          arrowNextIcon.style.top = my + "px"
+          arrowNextIcon.style.right = "1.5rem"
+
+          // Rotation
+          useLog("arrowNext.getBoundingClientRect().height", "purple", arrowNext.getBoundingClientRect().height)
+          
+          const angle = (cx, cy, ex, ey) => {
+            var dy = ey - cy;
+            var dx = ex - cx;
+            var theta = Math.atan2(dy, dx); // range (-PI, PI]
+            theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+            //if (theta < 0) theta = 360 + theta; // range [0, 360)
+            return theta;
+          }
+          
+          const rotationDeg = ""
+          const cx = (arrowNext.getBoundingClientRect().height / 2)
+          const cy = (window.innerWidth / 2)
+          const ex = arrowNextIcon.getBoundingClientRect().left
+          const ey = arrowNextIcon.getBoundingClientRect().top
+
+          arrowNextIcon.style.transform = "rotate(" + angle(cx, cy, ex, ey) + "deg)"
+
+          //useLog("arrowNextIcon.style.top", "cyan", arrowNextIcon.style.top)
+          //useLog("arrowNextIcon.style.right", "blue", arrowNextIcon.style.left)
+        })
+      }
+    })
+    arrowNext.addEventListener("mouseleave", () => {
+      arrowNextFollow = false
+      arrowNextIcon.style.position = "static"
+      useLog("Mouse left!", "red", [arrowNextIcon, arrowNextFollow])
+    })
+  }
 
   ////////////////////////////////////////// END //////////////////////////////////////////////
-
-  /* 
-  WE HAVE:
-
-  props.project.
-  
-  */
 
 
   return (
@@ -117,8 +167,8 @@ export const ProjectsMainSection = (props) => {
         </div>
 
 
-        <div id='projects-next-arrow' className='projects-arrow' onClick={() => handleNextProject()}><i className='material-icons'>arrow_forward</i></div>
-        <div id='projects-prev-arrow' className='projects-arrow' onClick={() => handlePrevProject()}><i className='material-icons'>arrow_back</i></div>
+        <div id='projects-next-arrow' className='projects-arrow' onClick={() => handleNextProject()}><i className='material-icons' id='projects-next-arrow-icon'>arrow_forward</i></div>
+        <div id='projects-prev-arrow' className='projects-arrow' onClick={() => handlePrevProject()}><i className='material-icons' id='projects-prev-arrow-icon'>arrow_back</i></div>
 
         <div id='projects-quicknav'>
           

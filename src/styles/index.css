@@ -975,6 +975,10 @@ h1, h2, h3, h4, h5, h6 {
       -ms-grid-row-align: center;
       align-self: center;
   z-index: 1 !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #projects-container #projects-area .projects-arrow:hover {
@@ -982,6 +986,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #projects-container #projects-area #projects-next-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
   -ms-grid-column: 3;
       grid-column-start: 3;
   -ms-grid-row: 1;
@@ -989,6 +1004,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #projects-container #projects-area #projects-prev-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
   -ms-grid-column: 1;
       grid-column-start: 1;
   -ms-grid-row: 1;
