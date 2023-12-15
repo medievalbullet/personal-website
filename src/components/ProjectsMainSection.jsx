@@ -84,65 +84,77 @@ export const ProjectsMainSection = (props) => {
 
 
   // Arrows Follow mouse
-  const arrowNext = document.getElementById("projects-next-arrow")
-  const arrowPrev = document.getElementById("projects-prev-arrow")
+  const arrows = [
+    document.getElementById("projects-next-arrow"),
+    document.getElementById("projects-prev-arrow")
+  ]
 
-  const arrowNextIcon = document.getElementById("projects-next-arrow-icon")
-  const arrowPrevIcon = document.getElementById("projects-prev-arrow-icon")
+  const arrowIcons = [
+    document.getElementById("projects-next-arrow-icon"),
+    document.getElementById("projects-prev-arrow-icon")
+  ]
 
-  let arrowNextFollow = false
-
-  // NOTE: This doesn't work as intended, position fixed, made it work, but it doesnt reset back to position relative, and the while loop doesnt work.
-
-  if (arrowNext) {
-    arrowNext.addEventListener("mouseenter", () => {
-      arrowNextFollow = true
-      arrowNextIcon.style.position = "fixed"
-      //useLog("Mouse entered!", "aquamarine", [arrowNextIcon, arrowNextFollow])
-      
-      if (arrowNextFollow === true) {
-        document.addEventListener("mousemove", (e) => {
-          const my = e.clientY
-          useLog("my", "green", my)
-          
-          // Positioning
-          arrowNextIcon.style.top = my + "px"
-          arrowNextIcon.style.right = "1.5rem"
-
-          // Rotation
-          useLog("arrowNext.getBoundingClientRect().height", "purple", arrowNext.getBoundingClientRect().height)
-          
-          const angle = (cx, cy, ex, ey) => {
-            var dy = ey - cy;
-            var dx = ex - cx;
-            var theta = Math.atan2(dy, dx); // range (-PI, PI]
-            theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
-            //if (theta < 0) theta = 360 + theta; // range [0, 360)
-            return theta;
-          }
-          
-          const rotationDeg = ""
-          const cx = (arrowNext.getBoundingClientRect().height / 2)
-          const cy = (window.innerWidth / 2)
-          const ex = arrowNextIcon.getBoundingClientRect().left
-          const ey = arrowNextIcon.getBoundingClientRect().top
-
-          arrowNextIcon.style.transform = "rotate(" + angle(cx, cy, ex, ey) + "deg)"
-
-          //useLog("arrowNextIcon.style.top", "cyan", arrowNextIcon.style.top)
-          //useLog("arrowNextIcon.style.right", "blue", arrowNextIcon.style.left)
-        })
-      }
-    })
-    arrowNext.addEventListener("mouseleave", () => {
-      arrowNextFollow = false
-      arrowNextIcon.style.position = "static"
-      useLog("Mouse left!", "red", [arrowNextIcon, arrowNextFollow])
-    })
+  // Angle calculation
+  const angle = (cx, cy, ex, ey) => {
+    var dy = ey - cy;
+    var dx = ex - cx;
+    var theta = Math.atan2(dy, dx); // range (-PI, PI]
+    theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+    //if (theta < 0) theta = 360 + theta; // range [0, 360)
+    return theta;
   }
 
-  ////////////////////////////////////////// END //////////////////////////////////////////////
+  let arrowFollow = false
 
+  //-//- Arrows compined code block -//-//
+  
+  for (let i = 0; i < arrows.length; i++) {
+    if (arrows[0] && arrows[1]) {
+      
+      arrows[i].addEventListener("mouseenter", () => {
+  
+        arrowFollow = true
+        arrowIcons[i].style.position = "fixed"
+        
+        if (arrowFollow === true) {
+          document.addEventListener("mousemove", (e) => {
+            
+            // Positioning
+            const my = e.clientY
+  
+            arrowIcons[i].style.top = my + "px"
+
+            arrowIcons[0].style.right = "1.5rem"
+            arrowIcons[1].style.left = "1.5rem"
+  
+            // Rotation
+            const cx = (window.innerWidth / 2)
+            const cy = (arrows[0].getBoundingClientRect().top * 2)
+  
+            const ex = arrowIcons[i].getBoundingClientRect().left
+            const ey = arrowIcons[i].getBoundingClientRect().top
+  
+            if (i === 1) {
+              useLog("[I] is 1!", "brown", i)
+              arrowIcons[i].style.transform = "rotate(" + (angle(cx, cy, ex, ey) + 180) + "deg)"
+            } else {
+              arrowIcons[i].style.transform = "rotate(" + angle(cx, cy, ex, ey) + "deg)"
+            }
+            
+          })
+        }
+      })
+      arrows[i].addEventListener("mouseleave", () => {
+        arrowFollow = false
+        arrowIcons[i].style.position = "static"
+        useLog("Mouse left!", "red", [arrowIcons[i], arrowFollow])
+      })
+    }
+  }
+  
+  //-//- END -//-//
+
+  ////////////////////////////////////////// END //////////////////////////////////////////////
 
   return (
     <section id='projects-container'>
