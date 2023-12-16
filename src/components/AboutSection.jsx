@@ -14,7 +14,7 @@ function AboutBox(text, title) {
 export default function AboutSection() {
   return (
     <section id='about-container'>
-        <div id='about-main' className='slide-in-element'>
+        <div id='about-main'>
           <h2 className='slide-in-element' id='about-header'>ABOUT ME</h2>
           <div id='about-content'>
             <section className='about-section'>
@@ -23,17 +23,17 @@ export default function AboutSection() {
               <p className='about-text slide-in-element' id='about-journey-text'>
                 My coding journey originally started with game development, specifically the Godot game engine, and it's own programming language GDScript.
               </p>
-              <p>
+              <p className='about-text slide-in-element'>
                 <strong>GDScript</strong> is beginner friendly language similar to python, with a simple synthax and no types.
                 At this point in time I didn't have much experience, Even with my lack of experience with coding, I really enjoyed the proccess of making games, 
                 I never finished a game, but I was fascinated by the fact that I could create my own games.
               </p>
-              <p>
+              <p className='about-text slide-in-element'>
                 I used <strong>python</strong> as well for a while, and some basic C. 
                 I didn't create anything complicated just some basic apps like a tournament simulation game with python, 
                 where from a 16 teams, and a bracket system, each team gets randomly placed into brackets and then the winner is decided on based on the two teams power score.
               </p>
-              <p>
+              <p className='about-text slide-in-element'>
                 Then i got into web development just a year ago, mainly as usefull skill that would land me a job.
                 I chose frontend developement because I'm a really a visual type of a person and i though it would fit me well.
               </p>

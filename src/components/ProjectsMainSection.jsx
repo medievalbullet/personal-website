@@ -160,7 +160,7 @@ export const ProjectsMainSection = (props) => {
 
   return (
     <section id='projects-container'>
-      <h2 id='projects-header'>PROJECTS</h2>
+      <h2 className='slide-in-element' id='projects-header'>PROJECTS</h2>
       <div id='projects-area'>
         <img id='projects-bg' src='https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='background image, waterfall'/>
         <div id='projects-overlay'></div>
@@ -169,10 +169,10 @@ export const ProjectsMainSection = (props) => {
           {props.projects.map((project, index) => (
             <div className='projects-main' key={index}>
               <div className='projects-header'>
-                <img className='projects-logo' src={project.logo} alt="project logo" />
-                <h3 className='projects-title' style={{color: project.color}}>{project.title}</h3>
+                <img className='projects-logo slide-in-element' src={project.logo} alt="project logo" />
+                <h3 className='projects-title slide-in-element' style={{color: project.color}}>{project.title}</h3>
               </div>
-              <p className='projects-desc'>{project.descShort}</p>
+              <p className='projects-desc slide-in-element'>{project.descShort}</p>
               <button className='projects-visit'><a href={"/" + (project.title).toLowerCase}>Take a look!</a></button>
               <span className='projects-readmore'>Read more below</span>
               <i className='material-icons projects-readmore-arrow' style={{color: project.color}}>arrow_downward</i>
