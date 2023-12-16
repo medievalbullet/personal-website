@@ -14,7 +14,7 @@ function AboutBox(text, title) {
 export default function AboutSection() {
   return (
     <section id='about-container'>
-        <div id='about-main'>
+        <div id='about-main' className='slide-in-element'>
           <h2 className='slide-in-element' id='about-header'>ABOUT ME</h2>
           <div id='about-content'>
             <section className='about-section'>

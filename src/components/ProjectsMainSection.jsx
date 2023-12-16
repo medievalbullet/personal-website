@@ -111,7 +111,7 @@ export const ProjectsMainSection = (props) => {
   for (let i = 0; i < arrows.length; i++) {
     if (arrows[0] && arrows[1]) {
       
-      arrows[i].addEventListener("mouseenter", () => {
+      arrows[i].addEventListener("mouseover", () => {
   
         arrowFollow = true
         arrowIcons[i].style.position = "fixed"
@@ -142,9 +142,11 @@ export const ProjectsMainSection = (props) => {
             }
             
           })
+        } else {
+          arrowIcons[i].style.transform = "rotate(" + 0 + "deg)"
         }
       })
-      arrows[i].addEventListener("mouseleave", () => {
+      arrows[i].addEventListener("mouseout", () => {
         arrowFollow = false
         arrowIcons[i].style.position = "static"
         useLog("Mouse left!", "red", [arrowIcons[i], arrowFollow])

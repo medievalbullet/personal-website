@@ -6,6 +6,7 @@ import ProjectsMainSection from './ProjectsMainSection'
 import ProjectsDetailSection from './ProjectsDetailSection.jsx'
 import WelcomeSection from './WelcomeSection.jsx'
 import { Footer } from './Footer.jsx'
+import { ScrollToTop } from './ScrollToTop.jsx'
 //import ContactSection from './ContactSection'
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <TopNavbar />
       </header>
       <main id='home-sections'>
+        <ScrollToTop />
         <WelcomeSection />
         <AboutSection />
         <ProjectsDetailSection />
