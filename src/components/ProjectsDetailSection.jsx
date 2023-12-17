@@ -10,13 +10,13 @@ export const ProjectsDetailSection = () => {
     {
       id: 1,
   
-      title: 'Imigator',
-      descShort: 'An image database with tagging and search functionallity',
+      title: 'Imigate',
+      descShort: 'An image storage app with tagging and search functionallity',
       logo: require('../resources/logo192.png'),
   
       color: "lightgreen",
   
-      desc: "Imigator is a image database CRUD(Create, Read, Update, Delete) web application that allow users to upload images and tag them, then the images can be viewed and are also searchable by the user.",
+      desc: "Imigate is a image storage CRUD(Create, Read, Update, Delete) web application that allow users to upload images and tag them, then the images can be viewed and are also searchable by the user.",
       toolsList: [
         {
           title: "Vite",
@@ -43,7 +43,29 @@ export const ProjectsDetailSection = () => {
           logoAlt: "typescript logo"
         }
       ],
-      process: "When building the project I faced numerous challenges. My main goal was to focus on building a functioning CRUD app, while learning all the fundamentals of <strong>React</strong> and typescript. I chose typescript just to get familiar with it.",
+      process:
+      `
+      When building the project I faced numerous challenges.
+      My main goal was to focus on building a functioning <strong>CRUD app</strong>, 
+      while learning all the fundamentals of <strong>React</strong> and <strong>Typescript</strong>. 
+      <br /><br />
+      Imigate greatly expanded my react experience, it though me about all the fundamentals, 
+      useState, useEffect, custom hooks and a lot more...
+      <br /><br />
+      Typescript was challanging to learn, I wasn't used to using types before, So in the beginning i got a lot type errors, 
+      which slowed down my progress initially. But once i got the hang of it, it was a refreshing experience, 
+      my code became cleaner and easier to read.
+      <br /><br />
+      Looking back, chosing the biggest project as my first one was a mistake. 
+      A portion of the code in this project is not optimized properly because of my lack of skill at the time, 
+      As the project became bigger it also got harder to see though it, and to comment and organize everything. 
+      <br /><br />
+      <h4>Conclusion</h4>
+      Overall this project really helped me putting all my React and HTML skill to test, 
+      and teaching me thoughout the proccess. 
+      That being said if I could start over, I would deffinitely start with smaller porjects first, 
+      and then when I have the skillset, move on to the bigger projects.
+      `,
       websiteLink: "/imigator",
       githubLink: "https://github.com/medievalbullet/Imigator"
     },
@@ -115,14 +137,6 @@ export const ProjectsDetailSection = () => {
     const arrowPrev = document.getElementById("projects-prev-arrow")
   
     const projectCount = projects.length
-  
-    const projectElement1 = document.getElementById("projects-quicknav-rect-1")
-    const projectElement2 = document.getElementById("projects-quicknav-rect-2")
-    const projectElement3 = document.getElementById("projects-quicknav-rect-3")
-    const projectElement4 = document.getElementById("projects-quicknav-rect-4")
-
-    // NOTE: The REF method doesn't seem to work... i dont get it how it supposed to work..?!
-    
 
     setCurrentProjectRef()
 
@@ -203,14 +217,9 @@ export const ProjectsDetailSection = () => {
     <>
       {/* MAIN SECTION */}
       <ProjectsMainSection projects={projects} currentProject={currentProject}/>
-      {/* Imigator */}
-      <ProjectsDetailReuse id={"projects-detail-main-"+projects[0].id} projects={projects[0]}/>
-      {/* PROJECT2 */}
-      <ProjectsDetailReuse id={"projects-detail-main-"+projects[1].id} projects={projects[1]}/>
-      {/* PROJECT3 */}
-      <ProjectsDetailReuse id={"projects-detail-main-"+projects[2].id} projects={projects[2]}/>
-      {/* Personal Website */}
-      <ProjectsDetailReuse id={"projects-detail-main-"+projects[3].id} projects={projects[3]}/>
+      {projects.map((project) => {
+        return <ProjectsDetailReuse id={"projects-detail-main-"+project.id} projects={project}/>
+      })}
     </>
   )
 }

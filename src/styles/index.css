@@ -34,6 +34,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Instrument Sans", Verdana, Arial;
   font-weight: 400;
+  line-height: 1.25rem;
 }
 
 code {
@@ -80,6 +81,7 @@ button:hover, button:active {
 h1, h2, h3, h4, h5, h6 {
   font-family: Rufina, sans-serif;
   font-weight: bold;
+  line-height: normal;
 }
 
 .slide-in-element {

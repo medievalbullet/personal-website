@@ -19,8 +19,8 @@ export const ProjectsDetailReuse = (props) => {
             <section>
               <h3 className='projects-detail-title slide-in-element'><i className="material-icons projects-detail-title-icon" style={{color: props.projects.color}}>description</i>Description, Features</h3>
               <div className="separator-h"></div>
-              <p className='slide-in-element'>
-                {props.projects.desc}
+              <p className='slide-in-element' dangerouslySetInnerHTML={{ __html: props.projects.desc }}>
+                {/* {props.projects.desc} */}
               </p>
             </section>
             <section className='projects-detail-tools'>
@@ -35,11 +35,12 @@ export const ProjectsDetailReuse = (props) => {
                 ))}
               </div>
             </section>
+            {/* Proccess Section */}
             <section className='projects-detail-process'>
               <h3 className='projects-detail-title slide-in-element'><i className="material-icons projects-detail-title-icon" style={{color: props.projects.color}}>account_tree</i>Process, Challenges</h3>
               <div className="separator-h"></div>
               <p className='projects-detail-process-main'>
-                <p className='slide-in-element'>{props.projects.process}</p>
+                <p className='slide-in-element' dangerouslySetInnerHTML={{ __html: props.projects.process }}>{/* {props.projects.process} */}</p>
                 <div className='projects-detail-process-links' style={{borderColor: props.projects.color}}>
                   <a className='slide-in-element' href={props.projects.websiteLink} target='_blank' style={{color: props.projects.color}}>[ <i className="material-icons" style={{color: props.projects.color}}>arrow_outward</i> VISIT THE WEBSITE ]</a>
                   <a className='slide-in-element' href={props.projects.githubLink} target='_blank' style={{color: props.projects.color}}>[ <img id='projects-detail-process-links-github' className='projects-detail-logo' style={{filter: 'invert(1)'}} src={require('../resources/github logo.png')} /> SOURCE CODE ]</a>
