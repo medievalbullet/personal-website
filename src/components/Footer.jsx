@@ -10,13 +10,13 @@ export const Footer = () => {
       </div>
       {/* <span className='separator-h'></span> */}
       <nav id='footer-links'>
-        <a href="">About</a>
+        <a onClick={() => useJumpTo("about-container")}>About</a>
         <span className='separator-v'></span>
-        <a href="">Skills</a>
+        <a onClick={() => {}}>Skills</a>
         <span className='separator-v'></span>
-        <a href="">Projects</a>
+        <a onClick={() => useJumpTo("projects-container")}>Projects</a>
         <span className='separator-v'></span>
-        <a href="">Contact</a>
+        <a onClick={() => useJumpTo("about-container")}>Contact</a>
       </nav>
     </section>
   )

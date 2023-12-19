@@ -22,25 +22,29 @@ export const ProjectsDetailSection = () => {
           title: "Vite",
           desc: "Initializing, Building the project",
           logo: require("../resources/vite logo.png"),
-          logoAlt: "vite logo"
+          logoAlt: "vite logo",
+          color: "#ffee06"
         },
         {
           title: "ReactJS",
           desc: "The Framework used",
           logo: require("../resources/react logo.png"),
-          logoAlt: "react logo"
+          logoAlt: "react logo",
+          color: "#06daff"
         },
         {
           title: "Sass(SCSS)",
           desc: "CSS Preprocessor",
           logo: require("../resources/sass logo.png"),
-          logoAlt: "sass logo"
+          logoAlt: "sass logo",
+          color: "#ea06ff"
         },
         {
           title: "Typescript",
           desc: "Main Programming Language",
           logo: require("../resources/typescript logo.webp"),
-          logoAlt: "typescript logo"
+          logoAlt: "typescript logo",
+          color: "#068fff"
         }
       ],
       process:
@@ -52,17 +56,25 @@ export const ProjectsDetailSection = () => {
       Imigate greatly expanded my react experience, it though me about all the fundamentals, 
       useState, useEffect, custom hooks and a lot more...
       <br /><br />
-      Typescript was challanging to learn, I wasn't used to using types before, So in the beginning i got a lot type errors, 
-      which slowed down my progress initially. But once i got the hang of it, it was a refreshing experience, 
+      Typescript was challanging to learn, I wasn't used to using types before, So in the beginning I got a lot type errors, 
+      which slowed down my progress initially. But once I got the hang of it, it was a refreshing experience, 
       my code became cleaner and easier to read.
+      <br /><br />
+      During developement I faced a problem, I needed a database to store the images uploaded by the user, 
+      The problem was since I was focusing on the frontend, I didn't want to get into using real databases, 
+      So I settled on IndexedDB. IndexedDB is a client side database that stores user info inside their browser. 
+      This solution was far from perfect, IndexedDB is slow compared to a real database, 
+      Especially when it comes to large images. This made the website realatively slow, and unresponsive. 
+      But this was a just compromise I had to make in order to finish this project within a reasonable timeframe.
       <br /><br />
       Looking back, chosing the biggest project as my first one was a mistake. 
       A portion of the code in this project is not optimized properly because of my lack of skill at the time, 
       As the project became bigger it also got harder to see though it, and to comment and organize everything. 
       <br /><br />
       <h4>Conclusion</h4>
-      Overall this project really helped me putting all my React and HTML skill to test, 
-      and teaching me thoughout the proccess. 
+      Overall, despite the challanges, this project really put all my React and HTML skill to test, 
+      and helped me advance in frontend web development quite a lot. 
+      <br />
       That being said if I could start over, I would deffinitely start with smaller porjects first, 
       and then when I have the skillset, move on to the bigger projects.
       `,
@@ -109,7 +121,29 @@ export const ProjectsDetailSection = () => {
       color: "red",
   
       desc: "Personal Website with information about me and my projects, showcased in a stylish way!",
-      toolsList: [],
+      toolsList: [
+        {
+          title: "ReactJS",
+          desc: "The Framework used",
+          logo: require("../resources/react logo.png"),
+          logoAlt: "react logo",
+          color: "#06daff"
+        },
+        {
+          title: "Sass(SCSS)",
+          desc: "CSS Preprocessor",
+          logo: require("../resources/sass logo.png"),
+          logoAlt: "sass logo",
+          color: "#ea06ff"
+        },
+        {
+          title: "Javascript",
+          desc: "Main Programming Language",
+          logo: require("../resources/javascript logo.png"),
+          logoAlt: "typescript logo",
+          color: "#ffff06"
+        }
+      ],
       process: "WIP",
       websiteLink: "/imigator",
       githubLink: "https://github.com/medievalbullet/Imigator"

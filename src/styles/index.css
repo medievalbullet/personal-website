@@ -58,6 +58,7 @@ code {
 a, Link {
   color: #00ff6a;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover, Link:hover {
@@ -753,6 +754,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem 2rem;
   border: 1px solid #f4f5ee;
   font-size: large;
+  border-radius: 1rem;
 }
 
 #projects-container #projects-area {
@@ -1302,22 +1304,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 1rem;
 }
 
-.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(1) span {
-  background: radial-gradient(black, #ffee06) !important;
-}
-
-.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(2) span {
-  background: radial-gradient(black, #06daff) !important;
-}
-
-.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(3) span {
-  background: radial-gradient(black, #ea06ff) !important;
-}
-
-.projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements div:nth-child(4) span {
-  background: radial-gradient(black, #068fff) !important;
-}
-
 .projects-detail-main .projects-detail-elements .projects-detail-tools .projects-detail-tools-elements span {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1360,6 +1346,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4rem;
   padding: 2rem;
   border: 1px solid lightgreen;
+  border-radius: 1rem;
 }
 
 .projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a {
@@ -1384,6 +1371,84 @@ h1, h2, h3, h4, h5, h6 {
 .projects-detail-main .projects-detail-elements .projects-detail-process .projects-detail-process-main .projects-detail-process-links a i {
   color: lightgreen;
   padding: 0.2rem;
+}
+
+#contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+#contact-container #contact-header {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#contact-container #contact-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  outline: 1px solid #00ff6a;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+#contact-container #contact-main #contact-title {
+  font-weight: bold;
+}
+
+#contact-container #contact-main #contact-email {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+  color: #f4f5ee;
+  border: none;
+  font-style: italic;
+  width: 11.5rem;
+}
+
+#contact-container #contact-main #contact-email:focus {
+  border: none !important;
+}
+
+#contact-container #contact-main .separator-v {
+  margin: 0 0.2rem;
+}
+
+#contact-container #contact-main #contact-copy-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 2.1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact-container #contact-main #contact-copy-button:hover, #contact-container #contact-main #contact-copy-button:active {
+  opacity: 0.6;
+}
+
+#contact-container #contact-main #contact-copy-button #contact-copy-icon {
+  font-size: 1rem;
 }
 
 #about-container {
@@ -1434,6 +1499,7 @@ h1, h2, h3, h4, h5, h6 {
   width: fit-content;
   margin: 2rem 0;
   border: 1px solid #f4f5ee;
+  border-radius: 1rem;
 }
 
 #about-main #about-content {
@@ -1459,7 +1525,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+
+#about-main #about-content .about-section p:first-of-type {
+  margin-top: -0.5rem;
 }
 
 #about-main #about-content .about-section .about-title {
@@ -1469,10 +1539,15 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.4rem;
   opacity: 0.7;
   color: #00ff6a;
+  margin-bottom: -0.5rem;
 }
 
 #about-main #about-content .about-section .about-icon {
   color: #00ff6a;
+}
+
+#about-main #about-content .about-section #about-hobbies-text {
+  margin-top: -0.5rem;
 }
 
 .footer {

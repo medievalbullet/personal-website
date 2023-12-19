@@ -7,6 +7,7 @@ import ProjectsDetailSection from './ProjectsDetailSection.jsx'
 import WelcomeSection from './WelcomeSection.jsx'
 import { Footer } from './Footer.jsx'
 import { ScrollToTop } from './ScrollToTop.jsx'
+import { ContactSection } from './ContactSection.jsx'
 //import ContactSection from './ContactSection'
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <WelcomeSection />
         <AboutSection />
         <ProjectsDetailSection />
+        <ContactSection />
       </main>
       <footer className="footer">
         <Footer />

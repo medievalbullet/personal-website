@@ -84,6 +84,8 @@ body {
 a, Link {
   color: $ACCENT-1;
   text-decoration: none;
+  cursor: pointer;
+
   &:hover {
     opacity: 0.6;
   }
@@ -600,6 +602,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem 2rem;
     border: 1px solid $TEXT;
     font-size: large;
+    border-radius: 1rem;
   }
 
   #projects-area {
@@ -971,27 +974,6 @@ h1, h2, h3, h4, h5, h6 {
           }
         }
 
-        div:nth-child(1) {
-          span {
-            background: radial-gradient(black, #ffee06) !important;
-          }
-        }
-        div:nth-child(2) {
-          span {
-            background: radial-gradient(black, #06daff) !important;
-          }
-        }
-        div:nth-child(3) {
-          span {
-            background: radial-gradient(black, #ea06ff) !important;
-          }
-        }
-        div:nth-child(4) {
-          span {
-            background: radial-gradient(black, #068fff) !important;
-          }
-        }
-
         span {
           display: flex;
           justify-content: center;
@@ -1024,6 +1006,7 @@ h1, h2, h3, h4, h5, h6 {
           margin-top: 4rem;
           padding: 2rem;
           border: 1px solid lightgreen;
+          border-radius: 1rem;
 
           a {
             display: flex;
@@ -1051,6 +1034,70 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 }
+
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  //width: 60%;
+
+  #contact-header {
+    justify-self: start;
+    align-self: center;
+  }
+  
+  #contact-main {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    outline: 1px solid $ACCENT-1;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    #contact-title  {
+      font-weight: bold;
+    }
+
+    #contact-email {
+      user-select: none;
+
+      background-color: transparent;
+      color: $TEXT;
+      border: none;
+      font-style: italic;
+
+      &:focus {
+        border: none !important;
+      }
+
+      width: 11.5rem;
+    }
+
+    .separator-v {
+      margin: 0 0.2rem;
+    }
+
+    #contact-copy-button {
+      display: flex;
+      height: 100%;
+      width: 2.1rem;
+      justify-content: center;
+
+      &:hover,&:active {
+        opacity: 0.6;
+      }
+
+      #contact-copy-icon {
+        font-size: 1rem;
+      }
+    }
+
+
+  }
+}
+
+
 
 #about-container {
   display: flex;
@@ -1084,6 +1131,7 @@ h1, h2, h3, h4, h5, h6 {
     width: fit-content;
     margin: 2rem 0;
     border: 1px solid $MAIN-LIGHT;
+    border-radius: 1rem;
     //border-radius: 1rem;
   }
   
@@ -1099,17 +1147,26 @@ h1, h2, h3, h4, h5, h6 {
     .about-section {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 1rem;
+
+      p:first-of-type {
+        margin-top: -0.5rem;
+      }
 
       .about-title {
         display: flex;
         gap: 0.4rem;
         opacity: 0.7;
         color: $ACCENT-1;
+        margin-bottom: -0.5rem;
       }
 
       .about-icon {
         color: $ACCENT-1;
+      }
+
+      #about-hobbies-text {
+        margin-top: -0.5rem;
       }
     }
   }

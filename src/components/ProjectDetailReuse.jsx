@@ -29,7 +29,7 @@ export const ProjectsDetailReuse = (props) => {
               <div className='projects-detail-tools-elements'>
                 {props.projects.toolsList.map((tool, index) => (
                   <div className='projects-detail-tools-logo-container slide-in-element' key={index}>
-                    <span style={{backgroundColor: props.projects.color}}><img className='projects-detail-tools-logo' src={tool.logo} alt={tool.logoAlt} />{tool.title}</span>
+                    <span style={{background: "radial-gradient(black, " + tool.color +")"}}><img className='projects-detail-tools-logo' src={tool.logo} alt={tool.logoAlt} />{tool.title}</span>
                     <p>- {tool.desc}</p>
                   </div>
                 ))}
