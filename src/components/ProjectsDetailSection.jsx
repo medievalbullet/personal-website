@@ -13,7 +13,8 @@ export const ProjectsDetailSection = () => {
       title: 'Imigate',
       descShort: 'An image storage app with tagging and search functionallity',
       logo: require('../resources/logo192.png'),
-  
+      background: "https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
       color: "lightgreen",
   
       desc: "Imigate is a image storage CRUD(Create, Read, Update, Delete) web application that allow users to upload images and tag them, then the images can be viewed and are also searchable by the user.",
@@ -87,7 +88,8 @@ export const ProjectsDetailSection = () => {
       title: 'PROJECT2',
       descShort: 'WIP',
       logo: require('../resources/logo192.png'),
-  
+      background: "https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
       color: "magenta",
   
       desc: "WIP",
@@ -102,6 +104,7 @@ export const ProjectsDetailSection = () => {
       title: 'PROJECT3',
       descShort: 'WIP',
       logo: require('../resources/logo192.png'),
+      background: "https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   
       color: "orange",
   
@@ -117,6 +120,7 @@ export const ProjectsDetailSection = () => {
       title: 'Personal Website',
       descShort: 'Personal Website featuring my projects',
       logo: require('../resources/logo192.png'),
+      background: "https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   
       color: "red",
   
