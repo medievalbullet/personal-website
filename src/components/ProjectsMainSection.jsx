@@ -40,14 +40,17 @@ export const ProjectsMainSection = (props) => {
     
     /// PROJECT MAIN ///
     const projectMainElements = document.getElementsByClassName('projects-main')
-    
+    const projectsBgElements = document.getElementsByClassName('projects-bg')
+
     // HIDE all the current PROJECT ELEMENTS, that are not the current
     Array.from(projectMainElements).map((element, index) => {
       if (index === currentProject - 1) {
         element.classList.remove('hidden')
+        projectsBgElements[index].classList.remove('hidden')
       } else {
         // Hide other elements
         element.classList.add('hidden')
+        projectsBgElements[index].classList.add('hidden')
       }
     })
     
@@ -163,7 +166,7 @@ export const ProjectsMainSection = (props) => {
       <h2 className='slide-in-element' id='projects-header'>PROJECTS</h2>
       <div id='projects-area'>
         {props.projects.map((project, index) => {
-          return <img id='projects-bg' src={project.background} alt='background image, waterfall'/>
+          return <img className='projects-bg' src={project.background} alt='background image, waterfall'/>
         })}
 
         {/* <img id='projects-bg' src='https://images.unsplash.com/photo-1542378151504-0361b8ec8f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='background image, waterfall'/> */}

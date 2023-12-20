@@ -774,7 +774,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem 0;
 }
 
-#projects-container #projects-area #projects-bg {
+#projects-container #projects-area .projects-bg {
   position: absolute;
   -ms-grid-column-align: start;
       justify-self: start;
