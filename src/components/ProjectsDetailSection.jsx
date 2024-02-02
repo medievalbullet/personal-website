@@ -15,7 +15,7 @@ export const ProjectsDetailSection = () => {
       logo: require('../resources/logo192.png'),
       background: "https://images.unsplash.com/photo-1702653082070-f5c83c643627?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5MHx8fGVufDB8fHx8fA%3D%3D",
 
-      color: "lightgreen",
+      color: "#00a880",
   
       desc: "Imigate is a image storage CRUD(Create, Read, Update, Delete) web application that allow users to upload images and tag them, then the images can be viewed and are also searchable by the user.",
       toolsList: [

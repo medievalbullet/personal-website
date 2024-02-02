@@ -1234,7 +1234,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 80%;
   gap: 4rem;
 }
 
@@ -1678,6 +1677,15 @@ h1, h2, h3, h4, h5, h6 {
             order: -1;
     width: 30rem !important;
   }
+  .projects-detail-elements {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 600px) {
+  .projects-detail-elements {
+    max-width: 70%;
+  }
 }
 
 @media (min-width: 1120px) {
@@ -1695,6 +1703,9 @@ h1, h2, h3, h4, h5, h6 {
   #about-main {
     max-width: 60%;
     padding: 0 1rem;
+  }
+  .projects-detail-elements {
+    max-width: 40%;
   }
 }
 /*# sourceMappingURL=index.css.map */
